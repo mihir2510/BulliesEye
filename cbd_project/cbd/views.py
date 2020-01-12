@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.db.models import Count
 
-import json
+import json, ast
 import datetime
 
 from django.db.models import Max
@@ -169,6 +169,7 @@ def dashboard(request):
 
     # load affective word counts
     mlcache = MLCache.objects.all()[:1]
+    #print(mlcache)
     topic_model_json = ''
     topic_model_cyberbullying_json = ''
     affective_counts_json = ''
@@ -181,7 +182,7 @@ def dashboard(request):
         topic_model_cyberbullying_json = x.topic_model_cyberbullying_json
 
     affective_dict = json.loads(affective_counts_json)
-
+    
     affective_count_list = [] #must be in order
     affective_count_list.append(affective_dict['sadness'])
     affective_count_list.append(affective_dict['anticipation'])
@@ -194,21 +195,21 @@ def dashboard(request):
     affective_count_list.append(affective_dict['negative'])
     affective_count_list.append(affective_dict['surprise'])
 
-    affective_count_list_str = ','.join(map(str, affective_count_list))
+    affective_count_list_str = ', '.join(map(str, affective_count_list))
 
     # Load and print up to 10 Topics
-    tm_dict = json.loads(topic_model_json)
+    tm_dict = ast.literal_eval(topic_model_json)
     count = 1
     tm_str = "<ul>"
     for tp in tm_dict:
-        tm_str = tm_str + "<li><strong>Topic %d</strong></br>" % (count)
-        words_in_topic = []
-        for t in tp:
-            words_in_topic.append(t[1])
-        wrds = ','.join(map(str, words_in_topic))
+        tm_str += f"<li><strong>Topic {count}</strong></br>"
+        print('YESY', tp)
+        words = [word[0] for word in tp[1]]
+        
+        wrds = ', '.join(map(str, words))
         tm_str = tm_str + wrds + "</li>"
         count = count + 1
-        if count==11: break
+        if count == 11: break
     tm_str = tm_str + "</ul>"
 
     affective_cyber_dict = json.loads(affective_counts_cyberbullying_json)
@@ -224,23 +225,24 @@ def dashboard(request):
     affective_count_list.append(affective_cyber_dict['trust'])
     affective_count_list.append(affective_cyber_dict['negative'])
     affective_count_list.append(affective_cyber_dict['surprise'])
-
+    
     affective_cyber_count_list_str = ','.join(map(str, affective_count_list))
 
     # Load and print up to 10 Topics
-    tm_dict = json.loads(topic_model_cyberbullying_json)
+    tm_dict = ast.literal_eval(topic_model_json)
     count = 1
     tm_cyber_str = "<ul>"
     for tp in tm_dict:
-        tm_cyber_str = tm_cyber_str + "<li><strong>Topic %d</strong></br>" % (count)
-        words_in_topic = []
-        for t in tp:
-            words_in_topic.append(t[1])
-        wrds = ','.join(map(str, words_in_topic))
+        tm_cyber_str += f"<li><strong>Topic {count}</strong></br>"
+        words = [word[0] for word in tp[1]]
+        
+        wrds = ', '.join(map(str, words))
         tm_cyber_str = tm_cyber_str + wrds + "</li>"
         count = count + 1
-        if count==11: break
+        if count == 11: break
     tm_cyber_str = tm_cyber_str + "</ul>"
+
+    
 
     context_dict = {'tm_str': tm_str, 'tm_cyber_str':tm_cyber_str, 'affective_count_list_str': affective_count_list_str, 'affective_cyber_count_list_str': affective_cyber_count_list_str, 'nosocialmediausers': nosocialmediausers, 'nosocialmediamessages': nosocialmediamessages, 'nobullytraces': nobullytraces, 'missclassifiedcount': missclassifiedcount, 'rolejson': bullyrolecount_dict, 'recentincidents': recentincidents, 'weekts_dict': weekts_dict, 'months_dict': months_dict}
 
