@@ -46,16 +46,16 @@ def loadAffectiveDictionary(affectiveWordFile):
 
 # calculate affective senses counts
 def affective_sense_counts(texts, affectivelexicon_dict):
-	affective_senses_counts = {'anger': 0, 'anticipation': 0, 'disgust': 0, 'fear': 0, 'joy': 0, 'negative': 0, 'positive': 0, 'sadness': 0, 'surprise': 0, 'trust':0 }
-	for text in texts:
-		for token in text:
-			if token in affectivelexicon_dict:
-				affective_senses = affectivelexicon_dict[token]
-			for sense in affective_senses_counts:
-				affective_senses_counts[sense] = affective_senses_counts[sense] + int(affective_senses[sense])
+    affective_senses_counts = {'anger': 0, 'anticipation': 0, 'disgust': 0, 'fear': 0, 'joy': 0, 'negative': 0, 'positive': 0, 'sadness': 0, 'surprise': 0, 'trust':0 }
+    for text in texts:
+        for token in text:
+            if token in affectivelexicon_dict:
+                affective_senses = affectivelexicon_dict[token]
+                for sense in affective_senses_counts:
+                    affective_senses_counts[sense] = affective_senses_counts[sense] + int(affective_senses[sense])
 
-	affective_counts_json =  json.dumps(affective_senses_counts)
-	return affective_counts_json
+                    affective_counts_json =  json.dumps(affective_senses_counts)
+    return affective_counts_json
 
 # remove common words and tokenize
 def remove_stopwords(documents):
@@ -89,7 +89,7 @@ def get_LDAasJSON(texts):
     tmp = model.show_topics(num_topics=20, num_words=5, log=False, formatted=False)
 
     #print tmp
-    json_tm = json.dumps(tmp)
+    json_tm = json.dumps(str(tmp))
 
     return json_tm
 
@@ -98,12 +98,13 @@ affectivelexicon_dict = loadAffectiveDictionary('NRC-emotion-lexicon-wordlevel-a
 
 # Create database connection
 documents = []
-engine = create_engine("sqlite:///cyber.sqlite3")
+engine = create_engine("sqlite:///../cbd_project/cyber.sqlite3")
 connection = engine.connect()
-
+print('Connected')
 # Delete stored topics and affective lexicon counts
 connection.execute("DELETE FROM cbd_mlcache")
 
+print('Deleted')
 # load documents (i.e. posts or messages containing cyberbullying traces) from database
 sql = "SELECT id, body FROM cbd_processedsocialmediamessage WHERE has_bullying='Yes'"
 result = connection.execute(sql)
@@ -115,7 +116,7 @@ cyberbullyingdocs = remove_stopwords(documents)
 documents = []
 # load documents (i.e. posts or messages NOT containing cyberbullying traces) from database
 sql = "SELECT id, body FROM cbd_processedsocialmediamessage WHERE has_bullying='No'"
-result = connection.execute(sql);
+result = connection.execute(sql)
 for row in result:
     documents.append(row[1].replace('#039;',''))
 
@@ -126,6 +127,7 @@ topic_model_cyberbullying_json = get_LDAasJSON(cyberbullyingdocs)
 
 affective_counts_json = affective_sense_counts(noncyberbullyingdocs, affectivelexicon_dict)
 affective_counts_cyberbullying_json = affective_sense_counts(cyberbullyingdocs, affectivelexicon_dict)
-
+print('Down here')
 record = {"topic_model_json": topic_model_json.replace("'", "''"), "topic_model_cyberbullying_json": topic_model_cyberbullying_json.replace("'", "''"), "affective_counts_json": affective_counts_json.replace("'", "''"), 'affective_counts_cyberbullying_json': affective_counts_cyberbullying_json.replace("'", "''")}
+print('Screw saving it')
 save_summaryobject ("cbd_mlcache", record)
