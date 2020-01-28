@@ -1,0 +1,4 @@
+{
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "cyb/bin/python3.6"
+}
