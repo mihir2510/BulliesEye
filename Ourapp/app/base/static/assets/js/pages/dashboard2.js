@@ -26,7 +26,7 @@ $(function () {
     labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
-        label               : 'Electronics',
+        label               : 'CyberBullying Cases',
         fill           : 'rgb(210, 214, 222)',
         borderColor         : 'Blue',
         pointBackgroundColor          : 'rgb(210, 214, 222)',
@@ -34,8 +34,9 @@ $(function () {
         backgroundColor : 'Blue',
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgb(220,220,220)',
-        data                : [65, 59, 80, 81, 56, 55, 40]
+        data                : [65, 59, 80, 81, 56, 55, 65]
       },
+      /*
       {
         label               : 'Digital Goods',
         fill          : 'rgba(60,141,205)',
@@ -46,7 +47,7 @@ $(function () {
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgba(60,141,188,1)',
         data                : [28, 48, 40, 19, 86, 27, 90]
-      }
+      }*/
     ]
   };
 
@@ -116,9 +117,9 @@ var marksCanvas = document.getElementById("bully");
 var marksCanvas1 = document.getElementById("nonBully");
 
 var marksData = {
-  labels: ["English", "Maths", "Physics", "Chemistry", "Biology", "History"],
+  labels: ["Sadness", "Anticipation", "Disgust", "Positive", "Anger", "Joy","Fear","Trust","Negative","Surprise"],
   datasets: [{
-    label: "Student A",
+    label: "",
     backgroundColor: "transparent",
     borderColor: "rgba(200,0,0,0.6)",
     fill: false,
@@ -128,21 +129,27 @@ var marksData = {
     pointBackgroundColor: "orange",
     pointBorderColor: "rgba(200,0,0,0.6)",
     pointHoverRadius: 10,
-    data: [65, 75, 70, 80, 60, 80]
-  }, {
-    label: "Student B",
+    data: [65, 75, 80, 0, 60, 0,90,0,70,10]
+  }]
+};
+
+var marksData1 = {
+  labels: ["Sadness", "Anticipation", "Disgust", "Positive", "Anger", "Joy","Fear","Trust","Negative","Surprise"],
+  datasets: [{
+    label: "",
     backgroundColor: "transparent",
-    borderColor: "rgba(0,0,200,0.6)",
+    borderColor: "rgba(200,0,0,0.6)",
     fill: false,
     radius: 6,
     pointRadius: 6,
     pointBorderWidth: 3,
-    pointBackgroundColor: "cornflowerblue",
-    pointBorderColor: "rgba(0,0,200,0.6)",
+    pointBackgroundColor: "orange",
+    pointBorderColor: "rgba(200,0,0,0.6)",
     pointHoverRadius: 10,
-    data: [54, 65, 60, 70, 70, 75]
+    data: [50, 65, 70, 10, 60, 20,80,0,50,20]
   }]
 };
+
 
   var radarChart = new Chart(marksCanvas, {
   type: 'radar',
@@ -151,7 +158,7 @@ var marksData = {
 
   var radarChart1 = new Chart(marksCanvas1, {
     type: 'radar',
-    data: marksData,
+    data: marksData1,
     });
 
 //end radar chart
@@ -300,6 +307,7 @@ var marksData = {
       { latLng: [15.3, -61.38], name: 'Dominica' },
       { latLng: [-20.2, 57.5], name: 'Mauritius' },
       { latLng: [26.02, 50.55], name: 'Bahrain' },
+      { latLng: [22.5726, 88.3639], name: 'Kolkata' },
       { latLng: [0.33, 6.73], name: 'São Tomé and Príncipe' }
     ]
   });
