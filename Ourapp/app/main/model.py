@@ -35,9 +35,9 @@ def predict(text, maxlen=150):
     data = json.dumps({"signature_name": "serving_default",
                    "instances": text.tolist()})
     headers = {"content-type": "application/json"}
-    # print('Sending request...')
+    print('Sending request...')
     tac = time.time()
-    json_response = requests.post('http://localhost:8504/v1/models/cb:predict',
+    json_response = requests.post('http://13.127.65.157:8504/v1/models/cb:predict',
                                 data=data, headers=headers)
     tic = time.time()
     pred = np.array(json.loads(json_response.text)["predictions"])

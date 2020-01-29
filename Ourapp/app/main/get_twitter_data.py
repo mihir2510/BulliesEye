@@ -8,7 +8,7 @@ CONSUMER_KEY = "iSARkiEMiRNpyIt4z0ksLdEgA"
 CONSUMER_SECRET = "FCeXPjkJkiNPByAT3QtDyoTdV0Uq4msJgdFWtk7e34uANA5VeP"
 OAUTH_TOKEN = "855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU"
 OAUTH_TOKEN_SECRET = "yUm4a4DPN12YxZ9PFv9CvgGH1eyexWUjoacz2yCA8LIsZ"
-twitter = tweepy.OAuthHandleselecr(
+twitter = tweepy.OAuthHandler(
     CONSUMER_KEY, CONSUMER_SECRET
 )
 twitter.set_access_token(OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
@@ -38,8 +38,8 @@ def search(param, count=100):
             print(body, labels, has_bullying, end='\n\n')
         tcount += 1
     
-        conn.execute("INSERT INTO Tweets VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)", (tweet_id, body, created_at, username, location, pbody, has_bullying, labels, score,))
-        print('Inserted...')
+        inserted_id = conn.execute("INSERT INTO Tweets VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)", (tweet_id, body, created_at, username, location, pbody, has_bullying, labels, score,))
+        print('Inserted...', inserted_id)
     tac = time.time()
     print(100 * (bcount / tcount), 'Time taken', tac - tic)
 
@@ -47,4 +47,4 @@ if __name__ == '__main__':
     # TODO:
     # Setup a cron job for hourly running this script
     # Allow to configure this through web gui
-    search('obama', 1000)
+    search('nigga', 1)
