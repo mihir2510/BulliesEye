@@ -14,27 +14,28 @@ $(function () {
   // Get context with jQuery - using jQuery's .get() method.
   var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
   // This will get the first returned node in the jQuery collection.
-  var salesChart       = new Chart(salesChartCanvas);
 
   var salesChartData = {
     labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
         label               : 'Electronics',
-        fillColor           : 'rgb(210, 214, 222)',
-        strokeColor         : 'rgb(210, 214, 222)',
-        pointColor          : 'rgb(210, 214, 222)',
-        pointStrokeColor    : '#c1c7d1',
+        fill           : 'rgb(210, 214, 222)',
+        borderColor         : 'Blue',
+        pointBackgroundColor          : 'rgb(210, 214, 222)',
+        pointBorderColor    : 'rgb(0,2,255)',
+        backgroundColor : 'Blue',
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgb(220,220,220)',
         data                : [65, 59, 80, 81, 56, 55, 40]
       },
       {
         label               : 'Digital Goods',
-        fillColor           : 'rgba(60,141,188,0.9)',
-        strokeColor         : 'rgba(60,141,188,0.8)',
-        pointColor          : '#3b8bba',
-        pointStrokeColor    : 'rgba(60,141,188,1)',
+        fill          : 'rgba(60,141,205)',
+        borderColor         : 'Purple',
+        pointBackgroundColor          : 'rgb(200,0,255)',
+        backgroundColor  : 'Purple',
+        pointBorderColor    : 'Purple',
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgba(60,141,188,1)',
         data                : [28, 48, 40, 19, 86, 27, 90]
@@ -82,57 +83,110 @@ $(function () {
   };
 
   // Create the line chart
-  salesChart.Line(salesChartData, salesChartOptions);
-
+  // salesChart.Line(salesChartData, salesChartOptions);
+  var myLineChart = new Chart(salesChartCanvas, {
+    type: 'line',
+    data: salesChartData,
+    options: salesChartOptions
+  });
   // ---------------------------
   // - END MONTHLY SALES CHART -
   // ---------------------------
 
+  // begin radar chart
+
+var marksCanvas = document.getElementById("bully");
+var marksCanvas1 = document.getElementById("nonBully");
+
+var marksData = {
+  labels: ["English", "Maths", "Physics", "Chemistry", "Biology", "History"],
+  datasets: [{
+    label: "Student A",
+    backgroundColor: "transparent",
+    borderColor: "rgba(200,0,0,0.6)",
+    fill: false,
+    radius: 6,
+    pointRadius: 6,
+    pointBorderWidth: 3,
+    pointBackgroundColor: "orange",
+    pointBorderColor: "rgba(200,0,0,0.6)",
+    pointHoverRadius: 10,
+    data: [65, 75, 70, 80, 60, 80]
+  }, {
+    label: "Student B",
+    backgroundColor: "transparent",
+    borderColor: "rgba(0,0,200,0.6)",
+    fill: false,
+    radius: 6,
+    pointRadius: 6,
+    pointBorderWidth: 3,
+    pointBackgroundColor: "cornflowerblue",
+    pointBorderColor: "rgba(0,0,200,0.6)",
+    pointHoverRadius: 10,
+    data: [54, 65, 60, 70, 70, 75]
+  }]
+};
+
+  var radarChart = new Chart(marksCanvas, {
+  type: 'radar',
+  data: marksData,
+  });
+
+  var radarChart1 = new Chart(marksCanvas1, {
+    type: 'radar',
+    data: marksData,
+    });
+
+//end radar chart
+
+  // 
   // -------------
   // - PIE CHART -
   // -------------
   // Get context with jQuery - using jQuery's .get() method.
   var pieChartCanvas = $('#pieChart').get(0).getContext('2d');
-  var pieChart       = new Chart(pieChartCanvas);
-  var PieData        = [
-    {
-      value    : 700,
-      color    : '#f56954',
-      highlight: '#f56954',
-      label    : 'Facebook'
-    },
-    {
-      value    : 500,
-      color    : '#00a65a',
-      highlight: '#00a65a',
-      label    : 'Instagram'
-    },
-    {
-      value    : 400,
-      color    : '#f39c12',
-      highlight: '#f39c12',
-      label    : 'Twitter'
-    },
-    {
-      value    : 600,
-      color    : '#00c0ef',
-      highlight: '#00c0ef',
-      label    : 'LinkedIn'
-    },
-    {
-      value    : 300,
-      color    : '#3c8dbc',
-      highlight: '#3c8dbc',
-      label    : 'Reddit'
-    },
-    {
-      value    : 100,
-      color    : '#d2d6de',
-      highlight: '#d2d6de',
-      label    : 'Quora'
-    }
-  ];
+  
+  var pieData = {
+    datasets: [{
+        data: [10,20,30,40,50,60],
+        backgroundColor: [
+          '#f56964',
+          '#00a65o',
+          '#f39c12',
+          '#00c0ef',
+          '#3c8dbc',
+          '#d2d6be',
+        ],
+        borderColor: [
+          '#f56964',
+          '#00a65o',
+          '#f39c12',
+          '#00c0ef',
+          '#3c8dbc',
+          '#d2d6be',
+        ],
+        borderWidth: 1,
+        hoverBorderWidth: 5,
+        hoverBackgroundColor: [
+          '#f56964',
+          '#00a65o',
+          '#f39c12',
+          '#00c0ef',
+          '#3c8dbc',
+          '#d2d6be', 
+        ]
+    }],
+    labels: [
+      'Facebook', 'Instagram','Twitter','LinkedIn','Reddit','Quora'
+    ]
+    
+};
   var pieOptions     = {
+    legend:{
+      position:'right',
+      // These labels appear in the legend and in the tooltips when hovering different arcs
+      
+    },
     // Boolean - Whether we should show a stroke on each segment
     segmentShowStroke    : true,
     // String - The colour of each segment stroke
@@ -160,7 +214,11 @@ $(function () {
   };
   // Create pie or douhnut chart
   // You can switch between pie and douhnut using the method below.
-  pieChart.Doughnut(PieData, pieOptions);
+  var myDoughnutChart = new Chart(pieChartCanvas, {
+    type: 'doughnut',
+    data: pieData,
+    options: pieOptions
+});
   // -----------------
   // - END PIE CHART -
   // -----------------
