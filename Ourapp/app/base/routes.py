@@ -33,14 +33,14 @@ def route_errors(error):
 def login():
     login_form = LoginForm(request.form)
     if 'login' in request.form:
-        
+
         # read form data
         username = request.form['username']
         password = request.form['password']
 
         # Locate user
         user = User.query.filter_by(username=username).first()
-        
+
         # Check the password
         if user and verify_pass( password, user.password):
 
@@ -62,7 +62,7 @@ def create_user():
     if 'register' in request.form:
 
         username  = request.form['username']
-        email     = request.form['email'   ]
+        email     = request.form['email']
 
         user = User.query.filter_by(username=username).first()
         if user:
