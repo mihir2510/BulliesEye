@@ -6,3 +6,6 @@ flask_sqlalchemy
 gunicorn
 psycopg2
 dotenv
+twython
+tweepy
+nltk
