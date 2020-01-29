@@ -12634,3 +12634,160 @@ INFO:werkzeug: * Debugger PIN: 161-079-374
 INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 >>>>>>> aaf2765121576c7470aa4646448ac536aed94610
 >>>>>>> 22d001afe0f65e56bc3a8ca1709c1432cf98d191
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:20:51] "GET /index HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:20:54] "GET /static/favicon.ico HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:35:37] "GET /index HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:35:37] "GET /static/favicon.ico HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:36:01] "GET /search HTTP/1.1" 200 -
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', 'anay'), ('count', '4'), ('oauth_nonce', '132333387807218836911580317566'), ('oauth_timestamp', '1580317566'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=4&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=132333387807218836911580317566&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580317566&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=anay
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D4%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D132333387807218836911580317566%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580317566%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3Danay
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 8nM011UA9qkAsmbWNGEV9Nc0Of4=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=anay&count=4
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="132333387807218836911580317566", oauth_timestamp="1580317566", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="8nM011UA9qkAsmbWNGEV9Nc0Of4%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=anay&count=4 HTTP/1.1" 200 3454
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566044050444288 HTTP/1.1" 200 512
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222564849521025030 HTTP/1.1" 200 465
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222564500005507077 HTTP/1.1" 200 583
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222564329507020800 HTTP/1.1" 200 541
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:36:09] "POST /search HTTP/1.1" 200 -
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', 'anay'), ('count', '4'), ('oauth_nonce', '69979691346290353311580317596'), ('oauth_timestamp', '1580317596'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=4&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=69979691346290353311580317596&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580317596&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=anay
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D4%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D69979691346290353311580317596%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580317596%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3Danay
+DEBUG:oauthlib.oauth1.rfc5849:Signature: vqkVfnviyXi5mmEEVsHVGTcyIgo=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=anay&count=4
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Cookie': b'guest_id=v1%3A158031756790663073; personalization_id="v1_DrfFwHaGTXgikAzlX6706g=="; lang=en', b'Authorization': b'OAuth oauth_nonce="69979691346290353311580317596", oauth_timestamp="1580317596", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="vqkVfnviyXi5mmEEVsHVGTcyIgo%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=anay&count=4 HTTP/1.1" 200 3486
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566658046382084 HTTP/1.1" 200 609
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566633115226118 HTTP/1.1" 200 426
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566044050444288 HTTP/1.1" 200 512
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222564849521025030 HTTP/1.1" 200 465
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:36:38] "POST /search HTTP/1.1" 200 -
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', 'anay'), ('count', '4'), ('oauth_nonce', '16807483311874071291580317738'), ('oauth_timestamp', '1580317738'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=4&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=16807483311874071291580317738&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580317738&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=anay
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D4%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D16807483311874071291580317738%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580317738%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3Danay
+DEBUG:oauthlib.oauth1.rfc5849:Signature: jEXUhrgeJlux+ENDEgtz8AYKFn0=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=anay&count=4
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Cookie': b'guest_id=v1%3A158031756790663073; personalization_id="v1_DrfFwHaGTXgikAzlX6706g=="; lang=en', b'Authorization': b'OAuth oauth_nonce="16807483311874071291580317738", oauth_timestamp="1580317738", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="jEXUhrgeJlux%2BENDEgtz8AYKFn0%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=anay&count=4 HTTP/1.1" 200 2954
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566867585232896 HTTP/1.1" 200 417
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566755379314689 HTTP/1.1" 200 457
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566658046382084 HTTP/1.1" 200 609
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566633115226118 HTTP/1.1" 200 426
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:39:03] "POST /search HTTP/1.1" 200 -
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', 'AMBANI'), ('count', '4'), ('oauth_nonce', '23075274228386246311580317764'), ('oauth_timestamp', '1580317764'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=4&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=23075274228386246311580317764&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580317764&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=AMBANI
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D4%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D23075274228386246311580317764%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580317764%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3DAMBANI
+DEBUG:oauthlib.oauth1.rfc5849:Signature: N+sFsXPGTz+VLyGEo0X47zeDlaQ=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=AMBANI&count=4
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Cookie': b'guest_id=v1%3A158031756790663073; personalization_id="v1_DrfFwHaGTXgikAzlX6706g=="; lang=en', b'Authorization': b'OAuth oauth_nonce="23075274228386246311580317764", oauth_timestamp="1580317764", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="N%2BsFsXPGTz%2BVLyGEo0X47zeDlaQ%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=AMBANI&count=4 HTTP/1.1" 200 3534
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222567232519229441 HTTP/1.1" 200 584
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222567002029428737 HTTP/1.1" 200 456
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566937709801472 HTTP/1.1" 200 450
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566869846020097 HTTP/1.1" 200 460
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:39:27] "POST /search HTTP/1.1" 200 -
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', 'mukesh ambani'), ('count', '4'), ('oauth_nonce', '65640867175457159721580317792'), ('oauth_timestamp', '1580317792'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=4&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=65640867175457159721580317792&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580317792&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=mukesh%20ambani
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D4%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D65640867175457159721580317792%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580317792%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3Dmukesh%2520ambani
+DEBUG:oauthlib.oauth1.rfc5849:Signature: whzsXKi/xLwGTi3bblXR4qpIXuM=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=mukesh+ambani&count=4
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Cookie': b'guest_id=v1%3A158031756790663073; personalization_id="v1_DrfFwHaGTXgikAzlX6706g=="; lang=en', b'Authorization': b'OAuth oauth_nonce="65640867175457159721580317792", oauth_timestamp="1580317792", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="whzsXKi%2FxLwGTi3bblXR4qpIXuM%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=mukesh+ambani&count=4 HTTP/1.1" 200 3174
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222567232519229441 HTTP/1.1" 200 584
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566333222547461 HTTP/1.1" 200 534
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222566309835223040 HTTP/1.1" 200 521
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222562889728323586 HTTP/1.1" 200 469
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:39:54] "POST /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:41:57] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:41:58] "GET /static/favicon.ico HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:42:51] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:42:53] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:42:58] "GET /index.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/font-awesome/css/font-awesome.min.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/ionicons/css/ionicons.min.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/css/adminlte.min.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/css/skins/_all-skins.min.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/css/morris.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/css/jquery-jvectormap.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/css/bootstrap-datepicker.min.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/css/bootstrap3-wysihtml5.min.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/css/daterangepicker.css HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/jquery.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/bootstrap.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/jquery-ui.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/raphael.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/morris.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/jquery.sparkline.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/jquery-jvectormap-world-mill-en.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/jquery-jvectormap-1.2.2.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/daterangepicker.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/jquery.knob.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/bootstrap-datepicker.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/moment.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/font-awesome/fonts/fontawesome-webfont.woff2?v=4.7.0 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/img/user2-160x160.jpg HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/bootstrap3-wysihtml5.all.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/jquery.slimscroll.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/fastclick.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/assets/js/adminlte.min.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:31] "GET /static/favicon.ico HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:33] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:44:34] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:47:19] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:47:19] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:47:20] "GET /index.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:47:22] "GET /index.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:47:22] "GET /index.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:47:31] "GET /index2 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:47:32] "GET /static/assets/ionicons/fonts/ionicons.ttf?v=2.0.0 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:48:37] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [29/Jan/2020 22:48:45] "GET /index.html HTTP/1.1" 404 -

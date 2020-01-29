@@ -36,6 +36,16 @@ def route_template(template):
     except:
         return render_template('page-500.html'), 500
 
+'''
+@blueprint.route('/search')
+def pdf():
+    rendered= render_template('search.html')
+    pdf = pdfkit.from_string(rendered,False)
+
+    response.headers['Content-Type'] = 'application/pdf'
+    response.headers['Dispostion'] = 'inline,filename=output.pdf'
+'''
+
 @blueprint.route('/search', methods=['GET','POST'])
 @login_required
 def search_page():
@@ -79,3 +89,5 @@ def search_page():
         results = htmls
     print('Final data length is','None' if results==None else len(results))
     return render_template('search.html', results = results)
+
+
