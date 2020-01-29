@@ -1,6 +1,6 @@
 import logging, pprint
 import requests, json, pickle
-from preprocess import preprocess
+from model import predict
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
 token = '1028553795:AAEee86Tt40IHdGZe4JeooGRQfY_9UutE_w'
@@ -14,12 +14,13 @@ with open('models/tokenizer.pickle', 'rb') as f:
 
 logger = logging.getLogger(__name__)
 
-def predict(text, maxlen=150):
+def process_text(text, maxlen=150):
     text = ' '.join(preprocess(text))
     # print(text)
     text = np.array([text])
     text = tokenizer.texts_to_sequences(text)
     text = sequence.pad_sequences(text, maxlen=maxlen)
+    return text
 
 # Define a few command handlers. These usually take the two arguments update and
 # context. Error handlers also receive the raised TelegramError object in error.
@@ -38,9 +39,12 @@ def echo(update: Updater, context: CallbackContext):
     # print(bool(update.get(_effective_message)))
     # logging.warning(update._effective_message)
     data = update._effective_message.text
-    json_response = requests.post('http://13.127.65.157:3000/v1/models/cb:predict',
-                                data=data, headers=headers)
-    logging.warning(json.loads(json_response.text))
+    # pdata = process_text(data)
+    # json_response = requests.post('http://13.127.65.157:3000/v1/models/cb:predict',
+    #                             data=pdata, headers=headers)
+    # logging.warning(predict(data))
+    label, has_bullying, amount = predict(data)
+    logging.warning(label, has_bullying, amount)
     # update._effective_message.reply_text(json_response)
 
 
