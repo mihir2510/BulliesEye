@@ -8,7 +8,7 @@ token = '1028553795:AAEee86Tt40IHdGZe4JeooGRQfY_9UutE_w'
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 headers = {"content-type": "application/json"}
-
+users_dict = {}
 with open('models/tokenizer.pickle', 'rb') as f:
     tokenizer = pickle.load(f)
 
@@ -44,8 +44,13 @@ def echo(update: Updater, context: CallbackContext):
     #                             data=pdata, headers=headers)
     # logging.warning(predict(data))
     label, has_bullying, amount = predict(data)
-    logging.warning(label, has_bullying, amount)
-    # update._effective_message.reply_text(json_response)
+    # logging.warning(update)
+    send_data = ''.join(label)
+    # logging.warning(update['message']['from'])
+    # logging.warning(update['message'])
+    # for i in update['message']:
+    #     logging.warning(i)
+    update._effective_message.reply_text(send_data)
 
 
 def error(update: Updater, context: CallbackContext):
