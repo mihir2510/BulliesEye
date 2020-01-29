@@ -2,6 +2,7 @@ from twython import Twython
 import tweepy
 from sqlalchemy.engine import create_engine
 from preprocess import preprocess
+import json
 import random, datetime, time
 
 # Setup API Keys
@@ -15,6 +16,7 @@ twitter = Twython(app_key, app_secret, oauth_token, oauth_token_secret)
 # see https://dev.twitter.com/rest/reference/get/search/tweets for search options
 def search(param, count=100):
     results = twitter.search(q=param, count=count)
+
     for tweet in results['statuses']:
         print(json.dumps(tweet))
         body = tweet['text']
@@ -24,12 +26,12 @@ def search(param, count=100):
         userid = tweet['user']['id']
         username = tweet['user']['screen_name']
 
-        
         body = preprocess(body)
         print(username, body, end='\n\n')
+
         # Pass body to model and fetch has_bullying
         # Insert entry into db table
-        
+
 if __name__ == '__main__':
     # TODO:
     # Setup a cron job for hourly running this script
