@@ -1,3 +1,10 @@
+function swapView(){
+  $('#salesChartWeekly').toggle('slow','swing')
+  $('#salesChart').toggle('slow','swing')
+  $('#monthly').toggle()
+  $('#weekly').toggle()
+}
+
 $(function () {
 
   'use strict';
@@ -84,6 +91,8 @@ $(function () {
 
   // Create the line chart
   // salesChart.Line(salesChartData, salesChartOptions);
+  
+
   var myLineChart = new Chart(salesChartCanvas, {
     type: 'line',
     data: salesChartData,
@@ -93,6 +102,14 @@ $(function () {
   // - END MONTHLY SALES CHART -
   // ---------------------------
 
+  //begin bar graph
+  var salesChartCanvas1 = $('#salesChartWeekly').get(0).getContext('2d');
+  var myBarChart = new Chart(salesChartCanvas1, {
+    type: 'bar',
+    data: salesChartData,
+    options: salesChartOptions
+  });
+  //
   // begin radar chart
 
 var marksCanvas = document.getElementById("bully");
