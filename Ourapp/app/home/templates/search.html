@@ -1,0 +1,112 @@
+
+{% extends "base_site.html" %}
+
+{% block title %} Dashboard v2 {% endblock title %}
+
+{% block content %}
+<style media="screen">
+    blockquote.twitter-tweet {
+      display: inline-block;
+      font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 16px;
+      border-color: #eee #ddd #bbb;
+      border-radius: 5px;
+      border-style: solid;
+      border-width: 1px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+      margin: 10px 5px;
+      padding: 0 16px 16px 16px;
+      max-width: 468px;
+    }
+
+    blockquote.twitter-tweet p {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 20px;
+    }
+
+    blockquote.twitter-tweet a {
+      color: inherit;
+      font-weight: normal;
+      text-decoration: none;
+      outline: 0 none;
+    }
+
+    blockquote.twitter-tweet a:hover,
+    blockquote.twitter-tweet a:focus {
+      text-decoration: underline;
+    }
+
+    .flex-container{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #textbox{
+        width: 90%;
+    }
+    .form_layout{
+        width:80%;
+    }
+    #button-group{
+        width: 140%;
+        margin-left: 42%;
+    }
+    h3{
+        text-align: center;
+    }
+</style>
+<div class="flex-container container-fluid">
+    <div class="form_layout">
+        <h3>#SearchByOption</h3>
+        <form class="form-inline" id="form" method="post" action="/search">
+            <input name="search" class="form-control" id="textbox" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary btn-rounded btn-sm my-0" type="submit">Search</button>
+            <br><br>
+            <div class="btn-group btn-group-toggle" id="button-group" data-toggle="buttons">
+              <label class="btn btn-info active">
+                <input type="radio" name="user" id="option1" autocomplete="off" checked> By user
+              </label>
+              <label class="btn btn-info">
+                <input type="radio" name="topic" id="option2" autocomplete="off"> By topic
+              </label>
+              <label class="btn btn-info">
+                <input type="radio" name="hashtag" id="option3" autocomplete="off"> By hashtag
+              </label>
+            </div>
+        </form>
+    </div>
+    <div class="results" id="results">
+
+    </div>
+    <!-- <script type="text/javascript"> -->
+    <!-- let html = '' -->
+    {% if results %}
+        {% for result in results %}
+            {{ result | safe }}
+        {% endfor %}
+    {% endif %}
+<!-- </script> -->
+</div>
+<script type="text/javascript">
+    // document.getElementById('form').onsubmit = function(e){
+    //
+    //     e.preventDefault();
+    //     let option_clicked = null;
+    //     let textval = document.getElementById('textbox').value
+    //     for(let i=1; i<4; i++){
+    //         let btn = document.getElementById('option'+i)
+    //         // console.log(`For i=${i}`,btn.checked)
+    //         if(btn.checked){
+    //             option_clicked = i;
+    //         }
+    //     }
+    //     console.log(option_clicked,textval)
+    //     fetch()
+    // }
+</script>
+
+{% endblock %}
