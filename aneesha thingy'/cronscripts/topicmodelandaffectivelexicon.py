@@ -98,7 +98,7 @@ affectivelexicon_dict = loadAffectiveDictionary('NRC-emotion-lexicon-wordlevel-a
 
 # Create database connection
 documents = []
-engine = create_engine("sqlite:///../cbd_project/cyber.sqlite3")
+engine = create_engine("sqlite:///tweet.db")
 connection = engine.connect()
 print('Connected')
 # Delete stored topics and affective lexicon counts
