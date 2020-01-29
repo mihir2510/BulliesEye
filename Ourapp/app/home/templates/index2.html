@@ -193,8 +193,10 @@ input:checked + .slider:before {
                   
                   <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                 </div>
-                                <h3 class="box-title">Bullying</h3>
-                <canvas id="bully" width="600" height="400"></canvas>
+                                <h3 class="box-title">Bullying</h3></div>
+                                <div class="box-body">
+                                  <div class="row">
+                <canvas id="bully" width="600" height="400"></canvas></div>
               </div>
             </div>
           </div>
@@ -286,79 +288,21 @@ input:checked + .slider:before {
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <ul class="products-list product-list-in-box">
+              <ul class="products-list product-list-in-box" style='height: 300px; overflow-y: auto'>
+                {% for dat in data %}
                 <li class="item">
                   <div class="product-img">
                     <img src="/static/assets/img/default-50x50.gif" alt="Product Image">
                   </div>
                   <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">Username: kunal2
-                      <span class="label label-warning pull-right">24th July 2019</span></a>
+                    <a href="javascript:void(0)" class="product-title">Username: {{dat[0]}}
+                      <span class="label label-primary pull-right">{{dat[2]}}</span></a>
                     <span class="product-description">
-                          Comment: I'm bullying you right now!!! xP
+                          Comment: {{dat[1]}}
                         </span>
                   </div>
                 </li>
-                <li class="item">
-                  <div class="product-img">
-                    <img src="/static/assets/img/default-50x50.gif" alt="Product Image">
-                  </div>
-                  <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">Username: kunal2
-                      <span class="label label-info pull-right">24th July 2019</span></a>
-                    <span class="product-description">
-                          Comment: I'm bullying you right now!!! xP
-                        </span>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="product-img">
-                    <img src="/static/assets/img/default-50x50.gif" alt="Product Image">
-                  </div>
-                  <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">Username: kunal2
-                      <span class="label label-success pull-right">24th July 2019</span></a>
-                    <span class="product-description">
-                          Comment: I'm bullying you right now!!! xP
-                        </span>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="product-img">
-                    <img src="/static/assets/img/default-50x50.gif" alt="Product Image">
-                  </div>
-                  <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">Username: kunal2
-                      <span class="label label-danger pull-right">24th July 2019</span></a>
-                    <span class="product-description">
-                          Comment: I'm bullying you right now!!! xP
-                        </span>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="product-img">
-                    <img src="/static/assets/img/default-50x50.gif" alt="Product Image">
-                  </div>
-                  <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">Username: kunal2
-                      <span class="label label-default pull-right">24th July 2019</span></a>
-                    <span class="product-description">
-                          Comment: I'm bullying you right now!!! xP
-                        </span>
-                  </div>
-                </li>
-                <li class="item">
-                  <div class="product-img">
-                    <img src="/static/assets/img/default-50x50.gif" alt="Product Image">
-                  </div>
-                  <div class="product-info">
-                    <a href="javascript:void(0)" class="product-title">Username: kunal2
-                      <span class="label label-primary pull-right">24th July 2019</span></a>
-                    <span class="product-description">
-                          Comment: I'm bullying you right now!!! xP
-                        </span>
-                  </div>
-                </li>
+                {% endfor %}
                 <!-- /.item -->
               </ul>
             </div>
@@ -511,7 +455,8 @@ input:checked + .slider:before {
 {% endblock content %}
 
 {% block javascripts %}
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdVpvGO8uGeUlz7o7qQBrMqyWb0P6JkIM&callback="
+async defer></script>
     <!-- ChartJS -->
     <script src="/static/assets/js/chart.js"></script>
 

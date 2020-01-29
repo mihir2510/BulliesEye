@@ -1,8 +1,47 @@
+
+
 function swapView(){
   $('#salesChartWeekly').toggle('slow','swing')
   $('#salesChart').toggle('slow','swing')
   $('#monthly').toggle()
   $('#weekly').toggle()
+}
+
+$(window).on('load', function(){ var request = new XMLHttpRequest()
+
+  // Open a new connection, using the GET request on the URL endpoint
+  request.open('GET', '/api/data', true)
+  
+  request.onload = function(res) {
+    var a = JSON.parse(res.currentTarget.response)
+
+      codeAddress(a[1]);
+
+  }
+  
+  
+  request.send()});
+
+function codeAddress(address) {
+  // var geocoder = new google.maps.Geocoder();
+  // geocoder.geocode( { 'address': address}, function(results, status) {
+  //   if (status == 'OK') {
+  //     console.log('hereeeeee',results);
+  //   } else {
+  //     alert('Geocode was not successful for the following reason: ' + status);
+  //   }
+  // });
+  fetch('http://open.mapquestapi.com/geocoding/v1/address?key=uMbzFYASneAdgGG3PpUeApDpR1fjyaf6&location=Washington,DC',
+  {method: 'POST', // *GET, POST, PUT, DELETE, etc.
+  mode: 'cors', // no-cors, *cors, same-origin
+  cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+  credentials: 'same-origin', // include, *same-origin, omit
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+  },
+  redirect: 'follow', // manual, *follow, error
+})
+  .then((res)=>{console.log(res)})
 }
 
 $(function () {

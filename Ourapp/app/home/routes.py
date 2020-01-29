@@ -5,20 +5,38 @@ Copyright (c) 2019 - present AppSeed.us
 """
 
 from app.home import blueprint
-from flask import render_template, redirect, url_for, request
+from flask import render_template, redirect, url_for, request, jsonify
 from flask_login import login_required, current_user
 from app import login_manager
 from jinja2 import TemplateNotFound
 from app.main.get_data import search
+from sqlalchemy.engine import create_engine 
+from sqlalchemy import inspect
+from flask_cors import CORS, cross_origin
+engine = create_engine('sqlite:////home/vtg/Desktop/BulliesEye/Ourapp/database.db')
+conn = engine.connect()
+
+data = conn.execute("SELECT * FROM Tweets")
+inspector = inspect(engine)
+# print(inspector.get_table_names())
+
+# print(inspector.get_columns('Tweets'))
+temp = []
+locs = []
+for da in data:
+    temp.append([da[3],da[1],da[2]])
+    locs.append(da[4])
+
+@blueprint.route("/api/data")
+def geo_code():
+    return jsonify(locs)
 
 @blueprint.route('/index')
 @login_required
 def index():
-
     if not current_user.is_authenticated:
         return redirect(url_for('base_blueprint.login'))
-
-    return render_template('index2.html')
+    return render_template('index2.html',data = temp)
 
 @blueprint.route('/<template>')
 def route_template(template):
