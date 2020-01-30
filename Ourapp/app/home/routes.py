@@ -10,6 +10,19 @@ from flask_login import login_required, current_user
 from app import login_manager
 from jinja2 import TemplateNotFound
 from app.main.get_data import search
+import ast, requests
+
+# Returns (lat, long)
+def geocode(location):
+    token = '72e31e4798af49'
+    url = "https://us1.locationiq.com/v1/search.php"
+    data = {
+        'key': token,
+        'q': location,
+        'format': 'json'    
+    }
+    response = requests.get(url, params=data)
+    return ast.literal_eval(response.text)[0]['lat'], ast.literal_eval(response.text)[0]['lon']
 
 @blueprint.route('/index')
 @login_required
