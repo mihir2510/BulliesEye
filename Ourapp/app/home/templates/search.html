@@ -53,10 +53,16 @@
     }
     #button-group{
         width: 140%;
-        margin-left: 42%;
+        margin-left: 37%;
+        margin-bottom: 20px;
     }
     h3{
         text-align: center;
+    }
+    .generate_report{
+        background: transparent;
+        border: none;
+        /* transform: scale(0.8); */
     }
 </style>
 <div class="flex-container container-fluid">
@@ -92,6 +98,23 @@
 <!-- </script> -->
 </div>
 <script type="text/javascript">
+
+    let buttons = document.getElementsByClassName('generate_report')
+    console.log('length',buttons.length);
+    for(let i=0; i<buttons.length; i++){
+        let button = buttons[i]
+        button.onclick = function () {
+
+            console.log(`Button ${i} clicked with id ${button.id}`);
+            fetch('http://127.0.0.1:5000/get_report',{
+                'method':'POST',
+                'body': JSON.stringify({'id':button.id})
+            })
+            .then(data => data.json())
+            .then(json => console.log(json))
+            .catch(err => console.log(err));
+        }
+    }
     // document.getElementById('form').onsubmit = function(e){
     //
     //     e.preventDefault();
