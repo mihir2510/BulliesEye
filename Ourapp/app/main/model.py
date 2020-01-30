@@ -1,4 +1,4 @@
-from tensorflow.keras.preprocessing import text, sequence
+from keras.preprocessing import text, sequence
 # from tensorflow.keras.models import load_model
 from .preprocess import preprocess
 import pickle
