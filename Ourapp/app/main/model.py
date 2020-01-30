@@ -12,7 +12,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 # model = load_model('models/v1.h5')
 # import os
 # print('---------',os.getcwd()) #/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/main/models
-with open('./models/tokenizer.pickle', 'rb') as f:
+with open('./app/main/models/tokenizer.pickle', 'rb') as f:
     tokenizer = pickle.load(f)
 
 labels = {
