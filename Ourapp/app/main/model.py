@@ -1,6 +1,6 @@
 from keras.preprocessing import text, sequence
 # from tensorflow.keras.models import load_model
-from preprocess import preprocess
+from .preprocess import preprocess
 import pickle
 import numpy as np
 import pandas as pd
