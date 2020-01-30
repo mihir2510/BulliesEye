@@ -13,7 +13,8 @@ twitter = tweepy.OAuthHandler(
 )
 twitter.set_access_token(OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 api = tweepy.API(twitter, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
-engine = create_engine('sqlite:///../../database.db')
+
+engine = create_engine(f'sqlite:///tweets.db')
 conn = engine.connect()
 
 def search(param, count=100):
@@ -47,4 +48,5 @@ if __name__ == '__main__':
     # TODO:
     # Setup a cron job for hourly running this script
     # Allow to configure this through web gui
-    search('nigga', 1)
+    search('nigga', 1000)
+    search('obama', 1000)

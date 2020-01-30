@@ -9,6 +9,7 @@ from flask import render_template, redirect, url_for, request, jsonify
 from flask_login import login_required, current_user
 from app import login_manager
 from jinja2 import TemplateNotFound
+<<<<<<< HEAD
 from app.main.get_data import search, search_by_id
 from app.main.preprocess import preprocess
 from app.main.model import predict
@@ -97,16 +98,67 @@ def send_mail(receiver_email, attach_path):
     # terminating the session
     s.quit()
 
+=======
+from app.main.get_data import search
+from sqlalchemy.engine import create_engine 
+from sqlalchemy import inspect
+from flask_cors import CORS, cross_origin
+import ast, requests
+
+# engine = create_engine('sqlite:////home/vtg/Desktop/BulliesEye/Ourapp/database.db')
+# conn = engine.connect()
+# data = conn.execute("SELECT * FROM Tweets")
+
+engine1 = create_engine('sqlite://///home/mihir/Desktop/BulliesEye/Ourapp/app/main/tweets.db')
+conn1 = engine1.connect()
+data = conn1.execute("SELECT * FROM Tweets")
+data1 = conn1.execute("SELECT * FROM affective_sense")
+# print(inspector.get_table_names())
+
+# print(inspector.get_columns('Tweets'))
+temp = []
+senses = []
+locs = []
+for da in data:
+    if da[8]>0.5:
+        temp.append([da[3],da[1],da[2],da[8]])
+        locs.append(da[4])
+
+for sense in data1:
+    senses.append(sense)
+print(senses)
+
+final=[temp,[dict(row) for row in senses]]
+
+@blueprint.route("/api/data")
+def api_call():
+    return jsonify(final)
+
+@blueprint.route("/api/senses")
+def sens():
+    return jsonify({'senses': [dict(row) for row in senses]})
+
+
+# Returns (lat, long)
+def geocode(location):
+    token = '72e31e4798af49'
+    url = "https://us1.locationiq.com/v1/search.php"
+    data = {
+        'key': token,
+        'q': location,
+        'format': 'json'    
+    }
+    response = requests.get(url, params=data)
+    return ast.literal_eval(response.text)[0]['lat'], ast.literal_eval(response.text)[0]['lon']
+>>>>>>> a03b8ded0f191f00bd44d26f0e6117628ed29ecc
 
 
 @blueprint.route('/index')
 @login_required
 def index():
-
     if not current_user.is_authenticated:
         return redirect(url_for('base_blueprint.login'))
-
-    return render_template('index2.html')
+    return render_template('index2.html',data = temp)
 
 @blueprint.route('/<template>')
 def route_template(template):
@@ -123,6 +175,16 @@ def route_template(template):
 
     except:
         return render_template('page-500.html'), 500
+
+'''
+@blueprint.route('/search')
+def pdf():
+    rendered= render_template('search.html')
+    pdf = pdfkit.from_string(rendered,False)
+
+    response.headers['Content-Type'] = 'application/pdf'
+    response.headers['Dispostion'] = 'inline,filename=output.pdf'
+'''
 
 @blueprint.route('/search', methods=['GET','POST'])
 @login_required
@@ -199,6 +261,7 @@ def search_page():
     print('Final data length is','None' if results==None else len(results))
     return render_template('search.html', results = results)
 
+<<<<<<< HEAD
 @blueprint.route('/get_report', methods=['POST'])
 @login_required
 def get_report():
@@ -227,3 +290,6 @@ def get_report():
     fill_jinja('./app/main/report_generator/report_template.docx','report.docx',context)
     send_mail('kaustubh.damania@gmail.com', 'report.docx')
     return jsonify({'a':2, 'b':3})
+=======
+
+>>>>>>> a03b8ded0f191f00bd44d26f0e6117628ed29ecc

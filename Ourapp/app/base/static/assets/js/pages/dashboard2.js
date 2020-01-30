@@ -1,29 +1,146 @@
+
+
 function swapView(){
   $('#salesChartWeekly').toggle('slow','swing')
   $('#salesChart').toggle('slow','swing')
   $('#monthly').toggle()
   $('#weekly').toggle()
+  $('#lmonth').toggle()
+  $('#lweek').toggle()
 }
 
-$(function () {
+var json2;
+var keys = [];
+var values = [];
+var keys3 = [];
+var values3 = [];
+$(window).on('load', function(){ 
+  var request = new XMLHttpRequest()
+  var json1;
+  request.open('GET', '/api/data', true)
+  
+  request.onload = function(res) {
+    json1 = JSON.parse(request.responseText)
+    console.log(json1[1][0])
+    json2 = json1[1][0]
+    for (var key in json2) {
+      if(key!=="tag"){
+        keys.push(key)
+        values.push(json2[key])
+      }
+  }
+  
+  json3 = json1[1][1]
+    for (var key in json3) {
+      if(key!=="tag"){
+        keys3.push(key)
+        values3.push(json3[key])
+      }
+  }
+  //console.log(keys3,values3)
+  
+var marksCanvas = document.getElementById("bully");
 
-  'use strict';
 
-  /* ChartJS
-   * -------
-   * Here we will create a few charts using ChartJS
-   */
+var marksData = {
+  labels: keys,
+  datasets: [{
+    label: "",
+    backgroundColor: "transparent",
+    borderColor: "rgba(200,0,0,0.6)",
+    fill: false,
+    radius: 6,
+    pointRadius: 6,
+    pointBorderWidth: 3,
+    pointBackgroundColor: "orange",
+    pointBorderColor: "rgba(200,0,0,0.6)",
+    pointHoverRadius: 10,
+    data: values
+  }]
+};
 
-  // -----------------------
+
+var radarChart = new Chart(marksCanvas, {
+  type: 'radar',
+  data: marksData,
+  });
+
+  var marksData1 = {
+    labels: keys3,
+    datasets: [{
+      label: "",
+      backgroundColor: "transparent",
+      borderColor: "rgba(200,0,0,0.6)",
+      fill: false,
+      radius: 6,
+      pointRadius: 6,
+      pointBorderWidth: 3,
+      pointBackgroundColor: "orange",
+      pointBorderColor: "rgba(200,0,0,0.6)",
+      pointHoverRadius: 10,
+      data: values3
+    }]
+  };
+  
+  var marksCanvas1 = document.getElementById("nonBully");
+  
+    var radarChart1 = new Chart(marksCanvas1, {
+      type: 'radar',
+      data: marksData1,
+      });
+  
+  //end radar chart
+
+     // -----------------------
   // - MONTHLY SALES CHART -
   // -----------------------
+  var month = {'Jan':0,'Feb':0,'Mar':0,'Apr':0,'May':0,'Jun':0,'Jul':0,'Aug':0,'Sep':0,'Oct':0,'Nov':0,'Dec':0}
+  var weekdays = {'Mon':0,'Tue':0,'Wed':0,'Thu':0,'Fri':0,'Sat':0,'Sun':0}
 
+  for(var i=0;i<json1[0].length;i++){
+    for(var key in month){json1[0][i][2]
+      if(json1[0][i][2].includes(key)){
+        month[key]++;
+      }
+    }
+  }
+
+  var date2 = new Date()
+  
+  
+  for(var i=0;i<json1[0].length;i++){
+    var date1 = new Date(json1[0][i][2])
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+    if(diffDays<=7)
+    {
+      for(var key in weekdays){
+        if(json1[0][i][2].includes(key)){
+          weekdays[key]++
+        }
+      }
+    }
+  }
+
+  
+  keys1=[]
+  values1=[]
+  for (var key in month) {
+    keys1.push(key)
+    values1.push(month[key])
+  }
+
+  keys2=[]
+  values2=[]
+  for (var key in weekdays) {
+    keys2.push(key)
+    values2.push(weekdays[key])
+  }
   // Get context with jQuery - using jQuery's .get() method.
   var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
   // This will get the first returned node in the jQuery collection.
-
-  var salesChartData = {
-    labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  var barData = {
+    labels  : keys2,
     datasets: [
       {
         label               : 'CyberBullying Cases',
@@ -34,7 +151,24 @@ $(function () {
         backgroundColor : 'Blue',
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgb(220,220,220)',
-        data                : [65, 59, 80, 81, 56, 55, 65]
+        data                : values2
+      },]
+  }
+
+  var salesChartData = {
+    labels  : keys1,
+    
+    datasets: [
+      {
+        label               : 'CyberBullying Cases',
+        fill           : 'rgb(210, 214, 222)',
+        borderColor         : 'Blue',
+        pointBackgroundColor          : 'rgb(210, 214, 222)',
+        pointBorderColor    : 'rgb(0,2,255)',
+        backgroundColor : 'Blue',
+        pointHighlightFill  : '#fff',
+        pointHighlightStroke: 'rgb(220,220,220)',
+        data                : values1
       },
       /*
       {
@@ -92,76 +226,50 @@ $(function () {
 
   // Create the line chart
   // salesChart.Line(salesChartData, salesChartOptions);
-  
 
   var myLineChart = new Chart(salesChartCanvas, {
     type: 'line',
     data: salesChartData,
     options: salesChartOptions
   });
+  
+  var salesChartCanvas1 = $('#salesChartWeekly').get(0).getContext('2d');
+  var myBarChart = new Chart(salesChartCanvas1, {
+    type: 'bar',
+    data: barData,
+    options: salesChartOptions
+  });
+
+  
+
+
+  }
+  
+  request.send()
+
+
+}
+);
+
+
+$(function () {
+
+  'use strict';
+
+  /* ChartJS
+   * -------
+   * Here we will create a few charts using ChartJS
+   */
+
+
   // ---------------------------
   // - END MONTHLY SALES CHART -
   // ---------------------------
 
   //begin bar graph
-  var salesChartCanvas1 = $('#salesChartWeekly').get(0).getContext('2d');
-  var myBarChart = new Chart(salesChartCanvas1, {
-    type: 'bar',
-    data: salesChartData,
-    options: salesChartOptions
-  });
+  
   //
   // begin radar chart
-
-var marksCanvas = document.getElementById("bully");
-var marksCanvas1 = document.getElementById("nonBully");
-
-var marksData = {
-  labels: ["Sadness", "Anticipation", "Disgust", "Positive", "Anger", "Joy","Fear","Trust","Negative","Surprise"],
-  datasets: [{
-    label: "",
-    backgroundColor: "transparent",
-    borderColor: "rgba(200,0,0,0.6)",
-    fill: false,
-    radius: 6,
-    pointRadius: 6,
-    pointBorderWidth: 3,
-    pointBackgroundColor: "orange",
-    pointBorderColor: "rgba(200,0,0,0.6)",
-    pointHoverRadius: 10,
-    data: [65, 75, 80, 0, 60, 0,90,0,70,10]
-  }]
-};
-
-var marksData1 = {
-  labels: ["Sadness", "Anticipation", "Disgust", "Positive", "Anger", "Joy","Fear","Trust","Negative","Surprise"],
-  datasets: [{
-    label: "",
-    backgroundColor: "transparent",
-    borderColor: "rgba(200,0,0,0.6)",
-    fill: false,
-    radius: 6,
-    pointRadius: 6,
-    pointBorderWidth: 3,
-    pointBackgroundColor: "orange",
-    pointBorderColor: "rgba(200,0,0,0.6)",
-    pointHoverRadius: 10,
-    data: [50, 65, 70, 10, 60, 20,80,0,50,20]
-  }]
-};
-
-
-  var radarChart = new Chart(marksCanvas, {
-  type: 'radar',
-  data: marksData,
-  });
-
-  var radarChart1 = new Chart(marksCanvas1, {
-    type: 'radar',
-    data: marksData1,
-    });
-
-//end radar chart
 
   // 
   // -------------

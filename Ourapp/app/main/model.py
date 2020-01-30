@@ -22,7 +22,7 @@ labels = {
     3: 'threat',
     4: 'insult',
     5: 'identity_hate'
-}
+}   
 
 threshold = 0.4
 
@@ -71,5 +71,9 @@ def predict(text, maxlen=150):
     return  ''.join([str(int(i)) for i in np.array(values) > threshold]), has_bullying, score
 
 if __name__ == '__main__':
+<<<<<<< HEAD
     import sys
     print(predict(' '.join(sys.argv[2:])))
+=======
+    print(predict('you motherfucker'))
+>>>>>>> a03b8ded0f191f00bd44d26f0e6117628ed29ecc
