@@ -19,9 +19,9 @@ from datetime import datetime
 from app.main.report_generator.report import fill_jinja
 import os
 
-sender_email = "bullieseye101@gmail.com"  # Enter your address
+sender_email = "kaustubh.damania@gmail.com"  # Enter your address
 #receiver_email = "xyz@gmail.com"  # Enter receiver address if 1-to-1 communication
-password = "cyberbully101"
+password = "lionelmessi10"
 
 # Python code to illustrate Sending mail with attachments
 # from your Gmail account
@@ -266,7 +266,8 @@ def get_report():
     data = json.loads(data)
     print('data received is',data)
     url = data['id']
-    result = search_by_id(url.split('/')[-1])._json
+    id = url.split('/')[-1]
+    result = search_by_id(id)._json
     if not result['entities']['user_mentions']:
         witnesses = 'None'
     else:
@@ -283,6 +284,6 @@ def get_report():
         'actions': 'null'
     }
 
-    fill_jinja('./app/main/report_generator/report_template.docx','report.docx',context)
-    send_mail('kaustubh.damania@gmail.com', 'report.docx')
-    return jsonify({'a':2, 'b':3})
+    fill_jinja('./app/main/report_generator/report_template.docx','./app/base/static/{}.docx'.format(id),context)
+    send_mail('kaustubh.damania@gmail.com', './app/base/static/{}.docx'.format(id))
+    return jsonify({'url': '/static/{}.docx'.format(id)})

@@ -26295,3 +26295,800 @@ INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathon
 INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
 INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
 INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 10:56:06] "[37mGET /search HTTP/1.1[0m" 200 -
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', '#rejectcaa'), ('count', '25'), ('oauth_nonce', '27612913734067822321580361976'), ('oauth_timestamp', '1580361976'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=25&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=27612913734067822321580361976&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580361976&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=%23rejectcaa
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D25%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D27612913734067822321580361976%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580361976%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3D%2523rejectcaa
+DEBUG:oauthlib.oauth1.rfc5849:Signature: EYBbbQ/mZ2YEd/tknymM8WPl3g0=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=%23rejectcaa&count=25
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="27612913734067822321580361976", oauth_timestamp="1580361976", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="EYBbbQ%2FmZ2YEd%2FtknymM8WPl3g0%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=%23rejectcaa&count=25 HTTP/1.1" 200 12978
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 123
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 124
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 119
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 120
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 122
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 122
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 120
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 119
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 122
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 123
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 120
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 123
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 120
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 122
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 120
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 120
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 122
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 122
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 123
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 122
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 122
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 124
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 119
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 123
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222746639720271872 HTTP/1.1" 200 638
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222746461445558273 HTTP/1.1" 200 611
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222744591406751744 HTTP/1.1" 200 642
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222741231622656010 HTTP/1.1" 200 594
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222741081286152195 HTTP/1.1" 200 834
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222739942956306432 HTTP/1.1" 200 735
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222731258804895750 HTTP/1.1" 200 631
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222729888039407616 HTTP/1.1" 200 980
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222717891469926401 HTTP/1.1" 200 507
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222715716056600577 HTTP/1.1" 200 599
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222704795846266882 HTTP/1.1" 200 608
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222701587488854016 HTTP/1.1" 200 713
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222695783566196738 HTTP/1.1" 200 607
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222694611014914048 HTTP/1.1" 200 527
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222688878332502017 HTTP/1.1" 200 605
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222682667067441152 HTTP/1.1" 200 608
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222666336637046784 HTTP/1.1" 200 608
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222664933416017921 HTTP/1.1" 200 591
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222625781131558913 HTTP/1.1" 200 674
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222621637452763136 HTTP/1.1" 200 658
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222618757287305216 HTTP/1.1" 200 674
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222615796548952064 HTTP/1.1" 200 596
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222608501467439104 HTTP/1.1" 200 767
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222606941610041349 HTTP/1.1" 200 619
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 10:56:38] "[37mPOST /search HTTP/1.1[0m" 200 -
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', 'nigga'), ('count', '25'), ('oauth_nonce', '35251549997279994441580362003'), ('oauth_timestamp', '1580362003'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=25&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=35251549997279994441580362003&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580362003&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=nigga
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D25%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D35251549997279994441580362003%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580362003%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3Dnigga
+DEBUG:oauthlib.oauth1.rfc5849:Signature: qhEoiUK30yUYzJatvWpD9a3/fiM=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=nigga&count=25
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Cookie': b'guest_id=v1%3A158036198343023083; personalization_id="v1_9EtBuPGs4biYMn3XZattbg=="; lang=en', b'Authorization': b'OAuth oauth_nonce="35251549997279994441580362003", oauth_timestamp="1580362003", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="qhEoiUK30yUYzJatvWpD9a3%2FfiM%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=nigga&count=25 HTTP/1.1" 200 15808
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 108
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 117
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 109
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 118
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 115
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 106
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 103
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 115
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 108
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222753003293286400 HTTP/1.1" 200 405
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222753002831912966 HTTP/1.1" 200 467
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222753001414234112 HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222753000952868864 HTTP/1.1" 200 649
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752998868209664 HTTP/1.1" 200 463
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752998230831104 HTTP/1.1" 200 491
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752997584908288 HTTP/1.1" 200 605
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752994942386176 HTTP/1.1" 200 486
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752993096765440 HTTP/1.1" 200 509
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752993059180545 HTTP/1.1" 200 577
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752992853516290 HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752991989596165 HTTP/1.1" 200 476
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752991385702400 HTTP/1.1" 200 492
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752991331131392 HTTP/1.1" 200 492
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752991129804800 HTTP/1.1" 200 541
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752990605512704 HTTP/1.1" 200 402
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752990106456070 HTTP/1.1" 200 443
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752989997359112 HTTP/1.1" 200 453
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752988864884737 HTTP/1.1" 200 455
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752988202225664 HTTP/1.1" 200 454
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752987199655936 HTTP/1.1" 200 545
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752987036164097 HTTP/1.1" 200 492
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752986855878657 HTTP/1.1" 200 475
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752986511892480 HTTP/1.1" 200 470
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222752985941446657 HTTP/1.1" 200 519
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 10:57:08] "[37mPOST /search HTTP/1.1[0m" 200 -
+DEBUG:tweepy.binder:PARAMS: {'id': b'1222753001414234112'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('id', '1222753001414234112'), ('oauth_nonce', '36760894646235413181580362034'), ('oauth_timestamp', '1580362034'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: id=1222753001414234112&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=36760894646235413181580362034&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580362034&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/show.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fshow.json&id%3D1222753001414234112%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D36760894646235413181580362034%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580362034%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 1fAa/CwaAz623Fa2pWuN5w+5u3M=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/show.json?id=1222753001414234112
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="36760894646235413181580362034", oauth_timestamp="1580362034", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="1fAa%2FCwaAz623Fa2pWuN5w%2B5u3M%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/show.json?id=1222753001414234112 HTTP/1.1" 200 4731
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 10:57:18] "[1m[35mPOST /get_report HTTP/1.1[0m" 500 -
+DEBUG:tweepy.binder:PARAMS: {'id': b'1222752998230831104'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('id', '1222752998230831104'), ('oauth_nonce', '80661014830735961701580362113'), ('oauth_timestamp', '1580362113'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: id=1222752998230831104&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=80661014830735961701580362113&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580362113&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/show.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fshow.json&id%3D1222752998230831104%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D80661014830735961701580362113%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580362113%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 4UC+HfiTcGv/45pCgdp/+h0EbuA=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/show.json?id=1222752998230831104
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="80661014830735961701580362113", oauth_timestamp="1580362113", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="4UC%2BHfiTcGv%2F45pCgdp%2F%2Bh0EbuA%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/show.json?id=1222752998230831104 HTTP/1.1" 200 2218
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 10:58:40] "[1m[35mPOST /get_report HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:02:15] "[37mGET /search HTTP/1.1[0m" 200 -
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', 'nigga'), ('count', '25'), ('oauth_nonce', '10106537377488379211580362340'), ('oauth_timestamp', '1580362340'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=25&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=10106537377488379211580362340&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580362340&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=nigga
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D25%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D10106537377488379211580362340%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580362340%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3Dnigga
+DEBUG:oauthlib.oauth1.rfc5849:Signature: IePZTSvwX9U6Ll343Trt0kbq9Qw=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=nigga&count=25
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="10106537377488379211580362340", oauth_timestamp="1580362340", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="IePZTSvwX9U6Ll343Trt0kbq9Qw%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=nigga&count=25 HTTP/1.1" 200 19207
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 113
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 103
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 109
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 109
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 112
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 109
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 108
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 104
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 103
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754423132131328 HTTP/1.1" 200 459
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754420125061120 HTTP/1.1" 200 536
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754418380066817 HTTP/1.1" 200 450
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754418283728902 HTTP/1.1" 200 472
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754417386180608 HTTP/1.1" 200 415
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754417218334720 HTTP/1.1" 200 468
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754416714895360 HTTP/1.1" 200 482
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754416186593280 HTTP/1.1" 200 462
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754414198513664 HTTP/1.1" 200 459
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754414047481856 HTTP/1.1" 200 500
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754413208653824 HTTP/1.1" 200 495
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754412021547008 HTTP/1.1" 200 494
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754411170205696 HTTP/1.1" 200 530
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754411048468480 HTTP/1.1" 200 487
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754410566246401 HTTP/1.1" 200 512
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754410515877889 HTTP/1.1" 200 461
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754409840619521 HTTP/1.1" 200 441
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754409672654848 HTTP/1.1" 200 418
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754409463132162 HTTP/1.1" 200 491
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754409421164544 HTTP/1.1" 200 541
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754408288657414 HTTP/1.1" 200 418
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754408158711809 HTTP/1.1" 200 435
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754407932022785 HTTP/1.1" 200 473
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754407793623041 HTTP/1.1" 200 534
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222754407001083905 HTTP/1.1" 200 514
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:02:42] "[37mPOST /search HTTP/1.1[0m" 200 -
+DEBUG:tweepy.binder:PARAMS: {'id': b'1222754420125061120'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('id', '1222754420125061120'), ('oauth_nonce', '4327302918742359181580362368'), ('oauth_timestamp', '1580362368'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: id=1222754420125061120&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=4327302918742359181580362368&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580362368&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/show.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fshow.json&id%3D1222754420125061120%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D4327302918742359181580362368%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580362368%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: mtLUeu8ak+Ql43GnjCBg50fZriA=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/show.json?id=1222754420125061120
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="4327302918742359181580362368", oauth_timestamp="1580362368", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="mtLUeu8ak%2BQl43GnjCBg50fZriA%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/show.json?id=1222754420125061120 HTTP/1.1" 200 9890
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:02:51] "[1m[35mPOST /get_report HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', 'nigga'), ('count', '25'), ('oauth_nonce', '107181976772284692991580365391'), ('oauth_timestamp', '1580365391'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=25&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=107181976772284692991580365391&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580365391&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=nigga
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D25%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D107181976772284692991580365391%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580365391%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3Dnigga
+DEBUG:oauthlib.oauth1.rfc5849:Signature: gCpKJtEoBTUKdZZ3tKidmpWS92A=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=nigga&count=25
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="107181976772284692991580365391", oauth_timestamp="1580365391", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="gCpKJtEoBTUKdZZ3tKidmpWS92A%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=nigga&count=25 HTTP/1.1" 200 16115
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 112
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 122
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 103
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 122
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 102
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 103
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 108
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 109
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767219039526913 HTTP/1.1" 200 422
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767218318086144 HTTP/1.1" 200 453
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767217789546497 HTTP/1.1" 200 414
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767213901426688 HTTP/1.1" 200 647
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767212999651328 HTTP/1.1" 200 529
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767212802428928 HTTP/1.1" 200 420
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767212752183297 HTTP/1.1" 200 536
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767211489529856 HTTP/1.1" 200 709
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767210982248448 HTTP/1.1" 200 417
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767210789244928 HTTP/1.1" 200 493
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767209438752768 HTTP/1.1" 200 495
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767207282892800 HTTP/1.1" 200 441
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767206477463552 HTTP/1.1" 200 429
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767204254593025 HTTP/1.1" 200 577
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767202912391168 HTTP/1.1" 200 564
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767202803294208 HTTP/1.1" 200 493
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767201775734784 HTTP/1.1" 200 416
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767201305944064 HTTP/1.1" 200 539
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767201226235904 HTTP/1.1" 200 428
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767200085467136 HTTP/1.1" 200 477
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767198504214528 HTTP/1.1" 200 489
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767198193815558 HTTP/1.1" 200 483
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767197535096832 HTTP/1.1" 200 509
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767197275205632 HTTP/1.1" 200 575
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767196444725249 HTTP/1.1" 200 485
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:53:31] "[37mPOST /search HTTP/1.1[0m" 200 -
+DEBUG:tweepy.binder:PARAMS: {'id': b'1222767219039526913'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('id', '1222767219039526913'), ('oauth_nonce', '45654484823247720001580365416'), ('oauth_timestamp', '1580365416'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: id=1222767219039526913&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=45654484823247720001580365416&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580365416&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/show.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fshow.json&id%3D1222767219039526913%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D45654484823247720001580365416%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580365416%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: 489dexKbqIia+dDxmbs7XtkNxDo=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/show.json?id=1222767219039526913
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="45654484823247720001580365416", oauth_timestamp="1580365416", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="489dexKbqIia%2BdDxmbs7XtkNxDo%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/show.json?id=1222767219039526913 HTTP/1.1" 200 7314
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:53:41] "[37mPOST /get_report HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:53:41] "[33mGET /static/%7B%7D.docx HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:54:08] "[33mGET /static HTTP/1.1[0m" 404 -
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', 'nigga'), ('count', '25'), ('oauth_nonce', '109482438129401487101580365561'), ('oauth_timestamp', '1580365561'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=25&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=109482438129401487101580365561&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580365561&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=nigga
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D25%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D109482438129401487101580365561%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580365561%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3Dnigga
+DEBUG:oauthlib.oauth1.rfc5849:Signature: dkkuMyTfhAGpkqVG7+k5YJWrwpY=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=nigga&count=25
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="109482438129401487101580365561", oauth_timestamp="1580365561", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="dkkuMyTfhAGpkqVG7%2Bk5YJWrwpY%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=nigga&count=25 HTTP/1.1" 200 16627
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 103
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 115
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 109
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 109
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 108
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 103
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 109
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 108
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 103
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 109
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 105
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767931676692483 HTTP/1.1" 200 479
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767931634876416 HTTP/1.1" 200 492
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767931295174656 HTTP/1.1" 200 535
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767928556257280 HTTP/1.1" 200 438
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767928111706117 HTTP/1.1" 200 417
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767926861795329 HTTP/1.1" 200 541
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767926232547333 HTTP/1.1" 200 473
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767926224281600 HTTP/1.1" 200 473
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767926022897664 HTTP/1.1" 200 500
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767924676583424 HTTP/1.1" 200 473
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767923544166400 HTTP/1.1" 200 485
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767923225214976 HTTP/1.1" 200 456
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767920704520192 HTTP/1.1" 200 507
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767920209637376 HTTP/1.1" 200 540
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767919400136705 HTTP/1.1" 200 482
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767919085621248 HTTP/1.1" 200 419
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767917378547714 HTTP/1.1" 200 478
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767916824719360 HTTP/1.1" 200 497
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767916782886912 HTTP/1.1" 200 513
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767915986030592 HTTP/1.1" 200 544
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767915239460864 HTTP/1.1" 200 478
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767914912186373 HTTP/1.1" 200 500
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767913444114432 HTTP/1.1" 404 1745
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767913012289537 HTTP/1.1" 200 441
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222767910579527680 HTTP/1.1" 200 425
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:56:41] "[37mPOST /search HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:56:46] "[37mGET /static/favicon.ico HTTP/1.1[0m" 200 -
+DEBUG:tweepy.binder:PARAMS: {'id': b'1222767931634876416'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('id', '1222767931634876416'), ('oauth_nonce', '179554648366999162951580365657'), ('oauth_timestamp', '1580365657'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: id=1222767931634876416&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=179554648366999162951580365657&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580365657&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/show.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fshow.json&id%3D1222767931634876416%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D179554648366999162951580365657%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580365657%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: iREmxpFey2HOulTWC8NRhfNF6iQ=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/show.json?id=1222767931634876416
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="179554648366999162951580365657", oauth_timestamp="1580365657", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="iREmxpFey2HOulTWC8NRhfNF6iQ%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/show.json?id=1222767931634876416 HTTP/1.1" 200 10137
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:57:51] "[37mPOST /get_report HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:57:51] "[33mGET /static/%7B%7D.docx HTTP/1.1[0m" 404 -
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', 'nigga'), ('count', '25'), ('oauth_nonce', '29794930529620212341580365728'), ('oauth_timestamp', '1580365728'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=25&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=29794930529620212341580365728&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580365728&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=nigga
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D25%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D29794930529620212341580365728%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580365728%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3Dnigga
+DEBUG:oauthlib.oauth1.rfc5849:Signature: sLlvStQ31WNhpqYLa1+VhV5LDj8=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=nigga&count=25
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Cookie': b'guest_id=v1%3A158036556968592728; personalization_id="v1_Dwfx+CatnyaFPC1crSVB1g=="; lang=en', b'Authorization': b'OAuth oauth_nonce="29794930529620212341580365728", oauth_timestamp="1580365728", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="sLlvStQ31WNhpqYLa1%2BVhV5LDj8%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=nigga&count=25 HTTP/1.1" 200 15293
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 115
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 103
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 112
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 115
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 108
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 122
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 108
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 115
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 115
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 110
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 108
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 108
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 107
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 103
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 103
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): 13.127.65.157:3000
+DEBUG:urllib3.connectionpool:http://13.127.65.157:3000 "POST /v1/models/cb:predict HTTP/1.1" 200 111
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768628996673539 HTTP/1.1" 200 495
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768623346864128 HTTP/1.1" 200 463
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768622193475586 HTTP/1.1" 200 561
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768620075474944 HTTP/1.1" 200 517
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768619504844800 HTTP/1.1" 200 491
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768618020069382 HTTP/1.1" 200 457
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768617936293888 HTTP/1.1" 200 500
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768616766087168 HTTP/1.1" 200 514
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768616686309378 HTTP/1.1" 200 629
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768615092621317 HTTP/1.1" 200 446
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768614681518081 HTTP/1.1" 200 476
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768612286451712 HTTP/1.1" 200 424
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768610202017794 HTTP/1.1" 200 525
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768608205516806 HTTP/1.1" 200 453
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768607853150213 HTTP/1.1" 200 493
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768607777693696 HTTP/1.1" 200 483
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768607341445120 HTTP/1.1" 200 469
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768606682836992 HTTP/1.1" 200 475
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768606578118658 HTTP/1.1" 200 434
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768603784732672 HTTP/1.1" 200 518
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768603650502657 HTTP/1.1" 200 401
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768603306647553 HTTP/1.1" 200 566
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768602555678721 HTTP/1.1" 200 476
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768602060689409 HTTP/1.1" 200 542
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222768601750478848 HTTP/1.1" 200 484
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:59:05] "[37mPOST /search HTTP/1.1[0m" 200 -
+DEBUG:tweepy.binder:PARAMS: {'id': b'1222768622193475586'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('id', '1222768622193475586'), ('oauth_nonce', '173125238947955109971580365750'), ('oauth_timestamp', '1580365750'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: id=1222768622193475586&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=173125238947955109971580365750&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580365750&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/show.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fshow.json&id%3D1222768622193475586%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D173125238947955109971580365750%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580365750%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: LwRD0UImsTCwKrdqhKAafN7CpoY=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/show.json?id=1222768622193475586
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="173125238947955109971580365750", oauth_timestamp="1580365750", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="LwRD0UImsTCwKrdqhKAafN7CpoY%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/show.json?id=1222768622193475586 HTTP/1.1" 200 10028
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:59:27] "[37mPOST /get_report HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 11:59:27] "[33mGET /static/%7B%7D.docx HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:tweepy.binder:PARAMS: {'id': b'1222768622193475586'}
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=None, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('id', '1222768622193475586'), ('oauth_nonce', '100306076217344332141580365823'), ('oauth_timestamp', '1580365823'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: id=1222768622193475586&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=100306076217344332141580365823&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580365823&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/statuses/show.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fshow.json&id%3D1222768622193475586%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D100306076217344332141580365823%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580365823%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0
+DEBUG:oauthlib.oauth1.rfc5849:Signature: cr1B3n6/6cFfT97FikoEukZ7Z8k=
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/statuses/show.json?id=1222768622193475586
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {'Host': 'api.twitter.com', 'Authorization': 'OAuth oauth_nonce="100306076217344332141580365823", oauth_timestamp="1580365823", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="cr1B3n6%2F6cFfT97FikoEukZ7Z8k%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/statuses/show.json?id=1222768622193475586 HTTP/1.1" 200 10028
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 12:00:46] "[37mPOST /get_report HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 12:00:46] "[37mGET /static/1222768622193475586.docx HTTP/1.1[0m" 200 -
