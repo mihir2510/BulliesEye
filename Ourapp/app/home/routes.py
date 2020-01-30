@@ -26,40 +26,50 @@ data1 = conn1.execute("SELECT * FROM affective_sense")
 # print(inspector.get_table_names())
 
 # print(inspector.get_columns('Tweets'))
+
+def geocode(location):
+    try:
+        print(location)
+        token = '72e31e4798af49'
+        url = "https://us1.locationiq.com/v1/search.php"
+        data = {
+            'key': token,
+            'q': location,
+            'format': 'json'    
+        }
+        response = requests.get(url, params=data)
+        print(response)
+        return [location, ast.literal_eval(response.text)[0]['lat'], ast.literal_eval(response.text)[0]['lon']]
+    except:
+        pass
+
 temp = []
 senses = []
 locs = []
+i=0
+
 for da in data:
     if da[8]>0.5:
         temp.append([da[3],da[1],da[2],da[8]])
-        locs.append(da[4])
+        print(da[4])
+        if i<=30:
+            locs.append(geocode(da[4]))
+            i=i+1
+print(locs)
 
 for sense in data1:
     senses.append(sense)
 print(senses)
 
-final=[temp,[dict(row) for row in senses]]
+final=[temp,[dict(row) for row in senses],locs]
 
 @blueprint.route("/api/data")
 def api_call():
     return jsonify(final)
 
-@blueprint.route("/api/senses")
-def sens():
-    return jsonify({'senses': [dict(row) for row in senses]})
-
 
 # Returns (lat, long)
-def geocode(location):
-    token = '72e31e4798af49'
-    url = "https://us1.locationiq.com/v1/search.php"
-    data = {
-        'key': token,
-        'q': location,
-        'format': 'json'    
-    }
-    response = requests.get(url, params=data)
-    return ast.literal_eval(response.text)[0]['lat'], ast.literal_eval(response.text)[0]['lon']
+
 
 
 @blueprint.route('/index')
