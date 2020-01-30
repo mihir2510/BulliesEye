@@ -58,8 +58,11 @@ sql = "SELECT pbody FROM Tweets WHERE has_bullying=true;"
 result = connection.execute(sql)
 for row in result:
     documents.append(word_tokenize(row[0]))
-
+bcount = int(connection.execute('select count(tweet_id) from Tweets where has_bullying=true').scalar())
 affective_counts_json = affective_sense_counts(documents, affectivelexicon_dict)
+for key in affective_counts_json:
+    affective_counts_json[key] = int((affective_counts_json[key] / bcount) * 100)
+print(affective_counts_json, 'B')
 connection.execute('insert into affective_sense values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (affective_counts_json['anger'], affective_counts_json['anticipation'], affective_counts_json['disgust'], affective_counts_json['fear'], affective_counts_json['joy'], affective_counts_json['negative'], affective_counts_json['positive'], affective_counts_json['sadness'], affective_counts_json['surprise'], affective_counts_json['trust'], 'b'))
 
 documents = []
@@ -68,7 +71,11 @@ result = connection.execute(sql)
 for row in result:
     documents.append(word_tokenize(row[0]))
 
+nbcount = int(connection.execute('select count(tweet_id) from Tweets where has_bullying=false').scalar())
 affective_counts_json = affective_sense_counts(documents, affectivelexicon_dict)
+for key in affective_counts_json:
+    affective_counts_json[key] = int((affective_counts_json[key] / nbcount) * 100)
+print(affective_counts_json, 'NB')
 connection.execute('insert into affective_sense values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (affective_counts_json['anger'], affective_counts_json['anticipation'], affective_counts_json['disgust'], affective_counts_json['fear'], affective_counts_json['joy'], affective_counts_json['negative'], affective_counts_json['positive'], affective_counts_json['sadness'], affective_counts_json['surprise'], affective_counts_json['trust'], 'nb'))
 
 topic_model_json = get_LDAasJSON(documents)

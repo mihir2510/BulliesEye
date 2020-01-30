@@ -1,6 +1,6 @@
 from tensorflow.keras.preprocessing import text, sequence
 # from tensorflow.keras.models import load_model
-from preprocess import preprocess
+from .preprocess import preprocess
 import pickle
 import numpy as np
 import pandas as pd
@@ -10,8 +10,9 @@ import os, time
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 # model = load_model('models/v1.h5')
-
-with open('models/tokenizer.pickle', 'rb') as f:
+# import os
+# print('---------',os.getcwd()) #/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/main/models
+with open('app/main/models/tokenizer.pickle', 'rb') as f:
     tokenizer = pickle.load(f)
 
 labels = {
@@ -21,7 +22,7 @@ labels = {
     3: 'threat',
     4: 'insult',
     5: 'identity_hate'
-}   
+}
 
 threshold = 0.4
 
@@ -62,7 +63,7 @@ def predict(text, maxlen=150):
         if value > threshold:
             targets.append(labels.get(values.index(value) + 1))
     has_bullying = False
-    
+
     if len(targets):
         has_bullying = True
     score = toxic
@@ -70,4 +71,5 @@ def predict(text, maxlen=150):
     return  ''.join([str(int(i)) for i in np.array(values) > threshold]), has_bullying, score
 
 if __name__ == '__main__':
-    print(predict('you motherfucker'))
+    import sys
+    print(predict(' '.join(sys.argv[2:])))
