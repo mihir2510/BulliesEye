@@ -13,23 +13,39 @@ from app.main.get_data import search
 from sqlalchemy.engine import create_engine 
 from sqlalchemy import inspect
 from flask_cors import CORS, cross_origin
-engine = create_engine('sqlite:////home/vtg/Desktop/BulliesEye/Ourapp/database.db')
-conn = engine.connect()
 
-data = conn.execute("SELECT * FROM Tweets")
-inspector = inspect(engine)
+# engine = create_engine('sqlite:////home/vtg/Desktop/BulliesEye/Ourapp/database.db')
+# conn = engine.connect()
+# data = conn.execute("SELECT * FROM Tweets")
+
+engine1 = create_engine('sqlite:////home/vtg/Desktop/BulliesEye/Ourapp/app/main/tweets.db')
+conn1 = engine1.connect()
+data = conn1.execute("SELECT * FROM Tweets")
+data1 = conn1.execute("SELECT * FROM affective_sense")
 # print(inspector.get_table_names())
 
 # print(inspector.get_columns('Tweets'))
 temp = []
+senses = []
 locs = []
 for da in data:
-    temp.append([da[3],da[1],da[2]])
-    locs.append(da[4])
+    if da[8]>0.5:
+        temp.append([da[3],da[1],da[2],da[8]])
+        locs.append(da[4])
+
+for sense in data1:
+    senses.append(sense)
+print(senses)
+
+final=[temp,[dict(row) for row in senses]]
 
 @blueprint.route("/api/data")
 def geo_code():
-    return jsonify(locs)
+    return jsonify(final)
+
+@blueprint.route("/api/senses")
+def sens():
+    return jsonify({'senses': [dict(row) for row in senses]})
 
 @blueprint.route('/index')
 @login_required

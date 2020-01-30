@@ -149,7 +149,9 @@ input:checked + .slider:before {
               <div class="row">
                 <div class="col-md-11">
                   <p class="text-center">
-                    <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
+                    <strong class="box-title" id='lmonth'>Cases of bullying in the last month</strong>
+              <strong class="box-title" id='lweek' style='display:none'>Cases of bullying in the last week</strong>
+
                   </p>
 
                   <div class="chart">
@@ -226,8 +228,7 @@ input:checked + .slider:before {
           </div>
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">Cases of bullying</h3>
-
+              
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
@@ -295,7 +296,7 @@ input:checked + .slider:before {
                     <a href="javascript:void(0)" class="product-title">Username: {{dat[0]}}
                       <span class="label label-primary pull-right">{{dat[2]}}</span></a>
                     <span class="product-description">
-                          Comment: {{dat[1]}}
+                          Comment: {{dat[1]}}  
                         </span>
                   </div>
                 </li>

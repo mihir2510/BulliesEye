@@ -5,64 +5,104 @@ function swapView(){
   $('#salesChart').toggle('slow','swing')
   $('#monthly').toggle()
   $('#weekly').toggle()
+  $('#lmonth').toggle()
+  $('#lweek').toggle()
 }
-
-$(window).on('load', function(){ var request = new XMLHttpRequest()
-
-  // Open a new connection, using the GET request on the URL endpoint
+var json2;
+var keys = [];
+var values = [];
+$(window).on('load', function(){ 
+  var request = new XMLHttpRequest()
+  var json1;
   request.open('GET', '/api/data', true)
   
   request.onload = function(res) {
-    var a = JSON.parse(res.currentTarget.response)
-
-      codeAddress(a[1]);
-
+    json1 = JSON.parse(request.responseText)
+    console.log(json1[1][0])
+    json2 = json1[1][0]
+    for (var key in json2) {
+      keys.push(key)
+      values.push(json2[key])
   }
+  console.log(keys,values)
   
-  
-  request.send()});
 
-function codeAddress(address) {
-  // var geocoder = new google.maps.Geocoder();
-  // geocoder.geocode( { 'address': address}, function(results, status) {
-  //   if (status == 'OK') {
-  //     console.log('hereeeeee',results);
-  //   } else {
-  //     alert('Geocode was not successful for the following reason: ' + status);
-  //   }
-  // });
-  fetch('http://open.mapquestapi.com/geocoding/v1/address?key=uMbzFYASneAdgGG3PpUeApDpR1fjyaf6&location=Washington,DC',
-  {method: 'POST', // *GET, POST, PUT, DELETE, etc.
-  mode: 'cors', // no-cors, *cors, same-origin
-  cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-  credentials: 'same-origin', // include, *same-origin, omit
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded',
-  },
-  redirect: 'follow', // manual, *follow, error
-})
-  .then((res)=>{console.log(res)})
-}
+var marksCanvas = document.getElementById("bully");
 
-$(function () {
 
-  'use strict';
+var marksData = {
+  labels: keys,
+  datasets: [{
+    label: "",
+    backgroundColor: "transparent",
+    borderColor: "rgba(200,0,0,0.6)",
+    fill: false,
+    radius: 6,
+    pointRadius: 6,
+    pointBorderWidth: 3,
+    pointBackgroundColor: "orange",
+    pointBorderColor: "rgba(200,0,0,0.6)",
+    pointHoverRadius: 10,
+    data: values
+  }]
+};
 
-  /* ChartJS
-   * -------
-   * Here we will create a few charts using ChartJS
-   */
 
-  // -----------------------
+var radarChart = new Chart(marksCanvas, {
+  type: 'radar',
+  data: marksData,
+  });
+
+     // -----------------------
   // - MONTHLY SALES CHART -
   // -----------------------
+  var month = {'Jan':0,'Feb':0,'Mar':0,'Apr':0,'May':0,'Jun':0,'Jul':0,'Aug':0,'Sep':0,'Oct':0,'Nov':0,'Dec':0}
+  var weekdays = {'Mon':0,'Tue':0,'Wed':0,'Thu':0,'Fri':0,'Sat':0,'Sun':0}
 
+  for(var i=0;i<json1[0].length;i++){
+    for(var key in month){json1[0][i][2]
+      if(json1[0][i][2].includes(key)){
+        month[key]++;
+      }
+    }
+  }
+
+  var date2 = new Date()
+  
+  
+  for(var i=0;i<json1[0].length;i++){
+    var date1 = new Date(json1[0][i][2])
+    const diffTime = Math.abs(date2 - date1);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+    if(diffDays<=7)
+    {
+      for(var key in weekdays){
+        if(json1[0][i][2].includes(key)){
+          weekdays[key]++
+        }
+      }
+    }
+  }
+
+  
+  keys1=[]
+  values1=[]
+  for (var key in month) {
+    keys1.push(key)
+    values1.push(month[key])
+  }
+
+  keys2=[]
+  values2=[]
+  for (var key in weekdays) {
+    keys2.push(key)
+    values2.push(weekdays[key])
+  }
   // Get context with jQuery - using jQuery's .get() method.
   var salesChartCanvas = $('#salesChart').get(0).getContext('2d');
   // This will get the first returned node in the jQuery collection.
-
-  var salesChartData = {
-    labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  var barData = {
+    labels  : keys2,
     datasets: [
       {
         label               : 'CyberBullying Cases',
@@ -73,7 +113,24 @@ $(function () {
         backgroundColor : 'Blue',
         pointHighlightFill  : '#fff',
         pointHighlightStroke: 'rgb(220,220,220)',
-        data                : [65, 59, 80, 81, 56, 55, 65]
+        data                : values2
+      },]
+  }
+
+  var salesChartData = {
+    labels  : keys1,
+    
+    datasets: [
+      {
+        label               : 'CyberBullying Cases',
+        fill           : 'rgb(210, 214, 222)',
+        borderColor         : 'Blue',
+        pointBackgroundColor          : 'rgb(210, 214, 222)',
+        pointBorderColor    : 'rgb(0,2,255)',
+        backgroundColor : 'Blue',
+        pointHighlightFill  : '#fff',
+        pointHighlightStroke: 'rgb(220,220,220)',
+        data                : values1
       },
       /*
       {
@@ -131,47 +188,22 @@ $(function () {
 
   // Create the line chart
   // salesChart.Line(salesChartData, salesChartOptions);
-  
+  var marksCanvas1 = document.getElementById("nonBully");
 
   var myLineChart = new Chart(salesChartCanvas, {
     type: 'line',
     data: salesChartData,
     options: salesChartOptions
   });
-  // ---------------------------
-  // - END MONTHLY SALES CHART -
-  // ---------------------------
-
-  //begin bar graph
+  
   var salesChartCanvas1 = $('#salesChartWeekly').get(0).getContext('2d');
   var myBarChart = new Chart(salesChartCanvas1, {
     type: 'bar',
-    data: salesChartData,
+    data: barData,
     options: salesChartOptions
   });
-  //
-  // begin radar chart
 
-var marksCanvas = document.getElementById("bully");
-var marksCanvas1 = document.getElementById("nonBully");
-
-var marksData = {
-  labels: ["Sadness", "Anticipation", "Disgust", "Positive", "Anger", "Joy","Fear","Trust","Negative","Surprise"],
-  datasets: [{
-    label: "",
-    backgroundColor: "transparent",
-    borderColor: "rgba(200,0,0,0.6)",
-    fill: false,
-    radius: 6,
-    pointRadius: 6,
-    pointBorderWidth: 3,
-    pointBackgroundColor: "orange",
-    pointBorderColor: "rgba(200,0,0,0.6)",
-    pointHoverRadius: 10,
-    data: [65, 75, 80, 0, 60, 0,90,0,70,10]
-  }]
-};
-
+  
 var marksData1 = {
   labels: ["Sadness", "Anticipation", "Disgust", "Positive", "Anger", "Joy","Fear","Trust","Negative","Surprise"],
   datasets: [{
@@ -190,10 +222,6 @@ var marksData1 = {
 };
 
 
-  var radarChart = new Chart(marksCanvas, {
-  type: 'radar',
-  data: marksData,
-  });
 
   var radarChart1 = new Chart(marksCanvas1, {
     type: 'radar',
@@ -201,6 +229,34 @@ var marksData1 = {
     });
 
 //end radar chart
+
+  }
+  
+  request.send()
+
+
+}
+);
+
+
+$(function () {
+
+  'use strict';
+
+  /* ChartJS
+   * -------
+   * Here we will create a few charts using ChartJS
+   */
+
+
+  // ---------------------------
+  // - END MONTHLY SALES CHART -
+  // ---------------------------
+
+  //begin bar graph
+  
+  //
+  // begin radar chart
 
   // 
   // -------------
