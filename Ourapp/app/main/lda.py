@@ -49,18 +49,27 @@ def get_LDAasJSON(texts):
 
 affectivelexicon_dict = loadAffectiveDictionary('NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt')
 
-documents = []
+
 engine = create_engine("sqlite:///tweets.db")
 connection = engine.connect()
 print('Connected')
-
+documents = []
 sql = "SELECT pbody FROM Tweets WHERE has_bullying=true;"
 result = connection.execute(sql)
 for row in result:
     documents.append(word_tokenize(row[0]))
 
 affective_counts_json = affective_sense_counts(documents, affectivelexicon_dict)
-connection.execute('insert into affective_sense values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (affective_counts_json['anger'], affective_counts_json['anticipation'], affective_counts_json['disgust'], affective_counts_json['fear'], affective_counts_json['joy'], affective_counts_json['negative'], affective_counts_json['positive'], affective_counts_json['sadness'], affective_counts_json['surprise'], affective_counts_json['trust'],))
+connection.execute('insert into affective_sense values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (affective_counts_json['anger'], affective_counts_json['anticipation'], affective_counts_json['disgust'], affective_counts_json['fear'], affective_counts_json['joy'], affective_counts_json['negative'], affective_counts_json['positive'], affective_counts_json['sadness'], affective_counts_json['surprise'], affective_counts_json['trust'], 'b'))
+
+documents = []
+sql = "SELECT pbody FROM Tweets WHERE has_bullying=false;"
+result = connection.execute(sql)
+for row in result:
+    documents.append(word_tokenize(row[0]))
+
+affective_counts_json = affective_sense_counts(documents, affectivelexicon_dict)
+connection.execute('insert into affective_sense values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', (affective_counts_json['anger'], affective_counts_json['anticipation'], affective_counts_json['disgust'], affective_counts_json['fear'], affective_counts_json['joy'], affective_counts_json['negative'], affective_counts_json['positive'], affective_counts_json['sadness'], affective_counts_json['surprise'], affective_counts_json['trust'], 'nb'))
 
 topic_model_json = get_LDAasJSON(documents)
 

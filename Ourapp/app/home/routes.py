@@ -13,6 +13,7 @@ from app.main.get_data import search
 from sqlalchemy.engine import create_engine 
 from sqlalchemy import inspect
 from flask_cors import CORS, cross_origin
+import ast, requests
 
 # engine = create_engine('sqlite:////home/vtg/Desktop/BulliesEye/Ourapp/database.db')
 # conn = engine.connect()
@@ -46,6 +47,20 @@ def geo_code():
 @blueprint.route("/api/senses")
 def sens():
     return jsonify({'senses': [dict(row) for row in senses]})
+
+
+# Returns (lat, long)
+def geocode(location):
+    token = '72e31e4798af49'
+    url = "https://us1.locationiq.com/v1/search.php"
+    data = {
+        'key': token,
+        'q': location,
+        'format': 'json'    
+    }
+    response = requests.get(url, params=data)
+    return ast.literal_eval(response.text)[0]['lat'], ast.literal_eval(response.text)[0]['lon']
+
 
 @blueprint.route('/index')
 @login_required
