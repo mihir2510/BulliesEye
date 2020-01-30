@@ -19,9 +19,9 @@ from datetime import datetime
 from app.main.report_generator.report import fill_jinja
 import os
 
-sender_email = "kaustubh.damania@gmail.com"  # Enter your address
+sender_email = "bullieseye101@gmail.com"  # Enter your address
 #receiver_email = "xyz@gmail.com"  # Enter receiver address if 1-to-1 communication
-password = "lionelmessi10"
+password = "cyberbully101"
 
 # Python code to illustrate Sending mail with attachments
 # from your Gmail account

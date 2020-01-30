@@ -26290,3 +26290,8 @@ INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 10:35:40] "[37mGET /api/data HTTP/1.1
 INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 10:35:50] "[37mGET /index HTTP/1.1[0m" 200 -
 INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 10:35:54] "[37mGET /api/data HTTP/1.1[0m" 200 -
 INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 10:35:55] "[37mGET /static/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
+INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
+INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
+INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
+INFO:werkzeug: * Detected change in '/home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/home/routes.py', reloading
