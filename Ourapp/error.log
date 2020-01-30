@@ -17986,3 +17986,64 @@ INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 07:38:38] "[37mGET /static/assets/js/c
 INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 07:38:38] "[37mGET /static/assets/js/demo.js HTTP/1.1[0m" 200 -
 INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 07:38:39] "[37mGET /api/data HTTP/1.1[0m" 200 -
 INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 07:38:40] "[37mGET /static/favicon.ico HTTP/1.1[0m" 200 -
+DEBUG:requests_oauthlib.oauth1_auth:Signing request <PreparedRequest [GET]> using client <Client client_key=iSARkiEMiRNpyIt4z0ksLdEgA, client_secret=****, resource_owner_key=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU, resource_owner_secret=****, signature_method=HMAC-SHA1, signature_type=AUTH_HEADER, callback_uri=None, rsa_key=None, verifier=None, realm=None, encoding=utf-8, decoding=utf-8, nonce=None, timestamp=None>
+DEBUG:requests_oauthlib.oauth1_auth:Including body in call to sign: False
+DEBUG:oauthlib.oauth1.rfc5849:Collected params: [('q', 'anay'), ('count', '4'), ('oauth_nonce', '142805354237541798691580354601'), ('oauth_timestamp', '1580354601'), ('oauth_version', '1.0'), ('oauth_signature_method', 'HMAC-SHA1'), ('oauth_consumer_key', 'iSARkiEMiRNpyIt4z0ksLdEgA'), ('oauth_token', '855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU')]
+DEBUG:oauthlib.oauth1.rfc5849:Normalized params: count=4&oauth_consumer_key=iSARkiEMiRNpyIt4z0ksLdEgA&oauth_nonce=142805354237541798691580354601&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1580354601&oauth_token=855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU&oauth_version=1.0&q=anay
+DEBUG:oauthlib.oauth1.rfc5849:Normalized URI: https://api.twitter.com/1.1/search/tweets.json
+DEBUG:oauthlib.oauth1.rfc5849:Signing: signature base string: GET&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fsearch%2Ftweets.json&count%3D4%26oauth_consumer_key%3DiSARkiEMiRNpyIt4z0ksLdEgA%26oauth_nonce%3D142805354237541798691580354601%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1580354601%26oauth_token%3D855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU%26oauth_version%3D1.0%26q%3Danay
+DEBUG:oauthlib.oauth1.rfc5849:Signature: OiigPOAxw5pW0eSgx/AFFDCS2HI=
+DEBUG:oauthlib.oauth1.rfc5849:Encoding URI, headers and body to utf-8.
+DEBUG:requests_oauthlib.oauth1_auth:Updated url: https://api.twitter.com/1.1/search/tweets.json?q=anay&count=4
+DEBUG:requests_oauthlib.oauth1_auth:Updated headers: {b'User-Agent': b'Twython v3.7.0', b'Accept-Encoding': b'gzip, deflate', b'Accept': b'*/*', b'Connection': b'keep-alive', b'Authorization': b'OAuth oauth_nonce="142805354237541798691580354601", oauth_timestamp="1580354601", oauth_version="1.0", oauth_signature_method="HMAC-SHA1", oauth_consumer_key="iSARkiEMiRNpyIt4z0ksLdEgA", oauth_token="855516187538604032-85HhQucyZJd34U4vxNZb6CT4H7Lh1iU", oauth_signature="OiigPOAxw5pW0eSgx%2FAFFDCS2HI%3D"'}
+DEBUG:requests_oauthlib.oauth1_auth:Updated body: None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): api.twitter.com:443
+DEBUG:urllib3.connectionpool:https://api.twitter.com:443 "GET /1.1/search/tweets.json?q=anay&count=4 HTTP/1.1" 200 1911
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222721836200235010 HTTP/1.1" 200 467
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222721031942488066 HTTP/1.1" 200 439
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222720831479934976 HTTP/1.1" 200 404
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): publish.twitter.com:443
+DEBUG:urllib3.connectionpool:https://publish.twitter.com:443 "GET /oembed?url=https://twitter.com/web/status/1222720768758255616 HTTP/1.1" 200 407
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:53:24] "POST /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:53:27] "GET /static/favicon.ico HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:53:44] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:53:45] "GET /index.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:56:34] "GET /index.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:56:34] "GET /static/favicon.ico HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:56:40] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:56:42] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:56:43] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:56:44] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:56:44] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:56:47] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:57:18] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:57:18] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:57:18] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:57:38] "GET /search HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:57:45] "GET /index2 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:57:45] "GET /static/assets/js/pages/dashboard2.js HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:57:45] "GET /static/assets/js/demo.js HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:57:45] "GET /static/assets/js/chart.js HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:57:46] "GET /api/data HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:58:17] "GET /index2 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:58:18] "GET /api/data HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:58:18] "GET /static/favicon.ico HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 08:58:18] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:00:16] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:00:16] "GET /static/favicon.ico HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:00:16] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:00:17] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:00:18] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:00:18] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:00:23] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:03:06] "GET /index2.html HTTP/1.1" 404 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:03:06] "GET /static/favicon.ico HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:03:07] "GET /index HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:03:07] "GET /static/assets/img/default-50x50.gif HTTP/1.1" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:03:08] "GET /api/data HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:09:31] "GET /index HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:09:32] "GET /api/data HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Jan/2020 09:09:33] "GET /static/favicon.ico HTTP/1.1" 200 -

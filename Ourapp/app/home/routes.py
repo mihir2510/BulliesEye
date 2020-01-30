@@ -19,7 +19,7 @@ import ast, requests
 # conn = engine.connect()
 # data = conn.execute("SELECT * FROM Tweets")
 
-engine1 = create_engine('sqlite:////home/vtg/Desktop/BulliesEye/Ourapp/app/main/tweets.db')
+engine1 = create_engine('sqlite://///home/mihir/Desktop/BulliesEye/Ourapp/app/main/tweets.db')
 conn1 = engine1.connect()
 data = conn1.execute("SELECT * FROM Tweets")
 data1 = conn1.execute("SELECT * FROM affective_sense")
