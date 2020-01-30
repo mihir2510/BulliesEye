@@ -7,3 +7,4 @@ Ourapp/app/home/__pycache__
 Ourapp/app/__pycache__
 Ourapp/app/base/__pycache__
 Ourapp/error.log
+*.pyc
