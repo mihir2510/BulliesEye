@@ -46,10 +46,14 @@ def echo(update: Updater, context: CallbackContext):
     label, has_bullying, amount = predict(data)
     # logging.warning(update)
     send_data = ''.join(label)
-    # logging.warning(update['message']['from'])
-    # logging.warning(update['message'])
-    # for i in update['message']:
-    #     logging.warning(i)
+    if has_bullying:
+        user_details = update['message']['from_user']
+        if user_details.get('username'):
+            users_dict['username'] = 0 if type(users_dict['username'])!= int else users_dict['username']+1
+            if users_dict['username'] >=3:
+                update._effective_message.forward(user_details['id'])
+    logging.warning(update['message']['from_user'])
+    logging.warning(update['message'])
     update._effective_message.reply_text(send_data)
 
 
