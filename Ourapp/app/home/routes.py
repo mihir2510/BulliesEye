@@ -9,7 +9,6 @@ from flask import render_template, redirect, url_for, request, jsonify
 from flask_login import login_required, current_user
 from app import login_manager
 from jinja2 import TemplateNotFound
-<<<<<<< HEAD
 from app.main.get_data import search, search_by_id
 from app.main.preprocess import preprocess
 from app.main.model import predict
@@ -98,9 +97,8 @@ def send_mail(receiver_email, attach_path):
     # terminating the session
     s.quit()
 
-=======
 from app.main.get_data import search
-from sqlalchemy.engine import create_engine 
+from sqlalchemy.engine import create_engine
 from sqlalchemy import inspect
 from flask_cors import CORS, cross_origin
 import ast, requests
@@ -109,7 +107,7 @@ import ast, requests
 # conn = engine.connect()
 # data = conn.execute("SELECT * FROM Tweets")
 
-engine1 = create_engine('sqlite://///home/mihir/Desktop/BulliesEye/Ourapp/app/main/tweets.db')
+engine1 = create_engine('sqlite:////home/kaustubhdamania/CodingStuff/Hackathons/SIH2020/BulliesEye/Ourapp/app/main/tweets.db')
 conn1 = engine1.connect()
 data = conn1.execute("SELECT * FROM Tweets")
 data1 = conn1.execute("SELECT * FROM affective_sense")
@@ -146,11 +144,10 @@ def geocode(location):
     data = {
         'key': token,
         'q': location,
-        'format': 'json'    
+        'format': 'json'
     }
     response = requests.get(url, params=data)
     return ast.literal_eval(response.text)[0]['lat'], ast.literal_eval(response.text)[0]['lon']
->>>>>>> a03b8ded0f191f00bd44d26f0e6117628ed29ecc
 
 
 @blueprint.route('/index')
@@ -261,7 +258,6 @@ def search_page():
     print('Final data length is','None' if results==None else len(results))
     return render_template('search.html', results = results)
 
-<<<<<<< HEAD
 @blueprint.route('/get_report', methods=['POST'])
 @login_required
 def get_report():
@@ -290,6 +286,3 @@ def get_report():
     fill_jinja('./app/main/report_generator/report_template.docx','report.docx',context)
     send_mail('kaustubh.damania@gmail.com', 'report.docx')
     return jsonify({'a':2, 'b':3})
-=======
-
->>>>>>> a03b8ded0f191f00bd44d26f0e6117628ed29ecc
