@@ -41,7 +41,7 @@ print(senses)
 final=[temp,[dict(row) for row in senses]]
 
 @blueprint.route("/api/data")
-def geo_code():
+def api_call():
     return jsonify(final)
 
 @blueprint.route("/api/senses")

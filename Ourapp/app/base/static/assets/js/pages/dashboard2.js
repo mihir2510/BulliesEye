@@ -8,9 +8,12 @@ function swapView(){
   $('#lmonth').toggle()
   $('#lweek').toggle()
 }
+
 var json2;
 var keys = [];
 var values = [];
+var keys3 = [];
+var values3 = [];
 $(window).on('load', function(){ 
   var request = new XMLHttpRequest()
   var json1;
@@ -21,12 +24,21 @@ $(window).on('load', function(){
     console.log(json1[1][0])
     json2 = json1[1][0]
     for (var key in json2) {
-      keys.push(key)
-      values.push(json2[key])
+      if(key!=="tag"){
+        keys.push(key)
+        values.push(json2[key])
+      }
   }
-  console.log(keys,values)
   
-
+  json3 = json1[1][1]
+    for (var key in json3) {
+      if(key!=="tag"){
+        keys3.push(key)
+        values3.push(json3[key])
+      }
+  }
+  //console.log(keys3,values3)
+  
 var marksCanvas = document.getElementById("bully");
 
 
@@ -52,6 +64,32 @@ var radarChart = new Chart(marksCanvas, {
   type: 'radar',
   data: marksData,
   });
+
+  var marksData1 = {
+    labels: keys3,
+    datasets: [{
+      label: "",
+      backgroundColor: "transparent",
+      borderColor: "rgba(200,0,0,0.6)",
+      fill: false,
+      radius: 6,
+      pointRadius: 6,
+      pointBorderWidth: 3,
+      pointBackgroundColor: "orange",
+      pointBorderColor: "rgba(200,0,0,0.6)",
+      pointHoverRadius: 10,
+      data: values3
+    }]
+  };
+  
+  var marksCanvas1 = document.getElementById("nonBully");
+  
+    var radarChart1 = new Chart(marksCanvas1, {
+      type: 'radar',
+      data: marksData1,
+      });
+  
+  //end radar chart
 
      // -----------------------
   // - MONTHLY SALES CHART -
@@ -188,7 +226,6 @@ var radarChart = new Chart(marksCanvas, {
 
   // Create the line chart
   // salesChart.Line(salesChartData, salesChartOptions);
-  var marksCanvas1 = document.getElementById("nonBully");
 
   var myLineChart = new Chart(salesChartCanvas, {
     type: 'line',
@@ -204,31 +241,7 @@ var radarChart = new Chart(marksCanvas, {
   });
 
   
-var marksData1 = {
-  labels: ["Sadness", "Anticipation", "Disgust", "Positive", "Anger", "Joy","Fear","Trust","Negative","Surprise"],
-  datasets: [{
-    label: "",
-    backgroundColor: "transparent",
-    borderColor: "rgba(200,0,0,0.6)",
-    fill: false,
-    radius: 6,
-    pointRadius: 6,
-    pointBorderWidth: 3,
-    pointBackgroundColor: "orange",
-    pointBorderColor: "rgba(200,0,0,0.6)",
-    pointHoverRadius: 10,
-    data: [50, 65, 70, 10, 60, 20,80,0,50,20]
-  }]
-};
 
-
-
-  var radarChart1 = new Chart(marksCanvas1, {
-    type: 'radar',
-    data: marksData1,
-    });
-
-//end radar chart
 
   }
   
