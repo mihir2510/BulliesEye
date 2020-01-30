@@ -5,7 +5,10 @@ flask_wtf
 flask_sqlalchemy
 gunicorn
 psycopg2
-dotenv
+python-dotenv
 twython
 tweepy
 nltk
+keras
+docxtpl
+flask_cors

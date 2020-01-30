@@ -3,7 +3,7 @@ from sqlalchemy import inspect
 engine = create_engine('sqlite:///./tweets.db')
 conn = engine.connect()
 
-data = conn.execute("SELECT * FROM tweets")
+data = conn.execute("SELECT * FROM Tweets")
 
 inspector = inspect(engine)
 
@@ -13,9 +13,9 @@ inspector = inspect(engine)
 # # Get column information
 # print(inspector.get_columns('Tweets'))
 print(inspector.get_columns('affective_sense'))
-print(inspector.get_columns('tweets'))
+# print(inspector.get_columns('tweets'))
 for da in data:
-    print(da)
+    print(da[4])
     # for a in da:
     #     print(a)
 
