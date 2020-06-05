@@ -9,3 +9,4 @@ Ourapp/app/base/__pycache__
 Ourapp/error.log
 */__pycache/
 *.pyc
+Ourapp/env
