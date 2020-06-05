@@ -1,6 +1,3 @@
-cbd_project/cyb/
-cbd_project/.vscode/
-cbd_project/.DS_Store
 __pycache__
 Ourapp/__pycache__
 Ourapp/app/home/__pycache__
@@ -9,4 +6,4 @@ Ourapp/app/base/__pycache__
 Ourapp/error.log
 */__pycache/
 *.pyc
-Ourapp/env
+database.db
