@@ -6,7 +6,6 @@
 ```bash
 $ # Get the code
 $ git clone https://github.com/mihir2510/BulliesEye.git
-$
 $ cd BulliesEye/Ourapp
 $
 $ # Virtualenv modules installation (Unix based systems)
@@ -14,11 +13,7 @@ $ virtualenv --no-site-packages env
 $ source env/bin/activate
 $
 $ # Install modules
-$ 
 $ pip3 install -r requirements.txt
-$ 
-$ # OR with PostgreSQL connector
-$ pip install -r requirements.txt
 $
 $ # Set the FLASK_APP environment variable
 $ (Unix/Mac) export FLASK_APP=run.py
