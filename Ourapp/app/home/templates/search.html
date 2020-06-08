@@ -104,14 +104,28 @@
     for(let i=0; i<buttons.length; i++){
         let button = buttons[i]
         button.onclick = function () {
-
+            let root_url = window.location.href.split('/search')[0]
             console.log(`Button ${i} clicked with id ${button.id}`);
             fetch('http://127.0.0.1:5000/get_report',{
                 'method':'POST',
                 'body': JSON.stringify({'id':button.id})
             })
             .then(data => data.json())
-            .then(json => console.log(json))
+            .then(json => {
+                // console.log(json['url'],root_url);
+                let url = root_url + json['url']
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                // the filename you want
+                filename = url.split('/')
+                filename = filename[filename.length-1]
+                // console.log('filename',filename);
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            })
             .catch(err => console.log(err));
         }
     }
