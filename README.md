@@ -1,5 +1,9 @@
-# Bullies-Eye
+<div align='center'>
+    <img src='https://cdn4.iconfinder.com/data/icons/football-soccer-sports-outline/512/goal_target_arrow_espa_dartboard_bullseye_focus-512.png' width=200 height=200>
+</div>
 
+# Bullies-Eye
+---
 
 ## How to use it
 
@@ -29,8 +33,28 @@ $
 $ # Access the dashboard in browser: http://127.0.0.1:5000/
 ```
 
-<br />
+<br/>
 
+### Model Details
+
+- Trained custom word embeddings using `word2vec` algorithm on the "hatespeech" dataset from kaggle
+- Model architecture involved,
+  
+  ```
+    Embedding layer
+    SpatialDropout
+    BiDirectional LSTM
+    Conv1D
+    GlobalAveragePooling
+    Dense
+  ```
+- After training the model for 5 epochs accuracy of ~97% accuracy was achieved
+  
+### TODO
+
+- [ ] Implement Transformer architecture
+- [ ] Currently its deployed as a Twitter and Telegram Bot, target other platforms like Reddit and Facebook
+- [ ] Turn the Dashboard into a PWA 
 
 ### Contributors
 - [@KaustubhDamania](https://github.com/KaustubhDamania/)
