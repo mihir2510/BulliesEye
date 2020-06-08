@@ -32,7 +32,10 @@ $ flask run --host=0.0.0.0 --port=5000
 $
 $ # Access the dashboard in browser: http://127.0.0.1:5000/
 ```
+For the auto-report generation to work, update the sender's email and password in [routes.py](Ourapp/app/home/routes.py)
+<br/>
 
+Also, update the SQL engine path in [routes.py](Ourapp/app/home/routes.py)
 <br/>
 
 ### Model Details
@@ -53,7 +56,7 @@ $ # Access the dashboard in browser: http://127.0.0.1:5000/
 ### Scraper Details
 
 - The scraper uses [Tweepy](https://www.tweepy.org/) for scraping tweets from Twitter which is passed into the model to check for abusive content
-- Top X most offensive tweets were displayed on admin's dashboard with an option to auto-generate FIR report for each offensive/cyberbullying tweet.
+- Top X most offensive tweets were displayed on admin's dashboard with an option to auto-generate report for each offensive/cyberbullying tweet and mailing to relevant authorities.
 - Admin can also search for tweets with specific offensive words.
 
 
