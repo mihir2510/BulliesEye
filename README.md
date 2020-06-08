@@ -37,7 +37,7 @@ $ # Access the dashboard in browser: http://127.0.0.1:5000/
 
 ### Model Details
 
-- Trained custom word embeddings using `word2vec` algorithm on the "hatespeech" dataset from kaggle
+- Trained custom word embeddings using `word2vec` algorithm on the "hatespeech" dataset from Kaggle
 - Model architecture involved,
   
   ```
@@ -49,7 +49,14 @@ $ # Access the dashboard in browser: http://127.0.0.1:5000/
     Dense
   ```
 - After training the model for 5 epochs accuracy of ~97% accuracy was achieved
-  
+
+### Scraper Details
+
+- The scraper uses [Tweepy](https://www.tweepy.org/) for scraping tweets from Twitter which is passed into the model to check for abusive content
+- Top X most offensive tweets were displayed on admin's dashboard with an option to auto-generate FIR report for each offensive/cyberbullying tweet.
+- Admin can also search for tweets with specific offensive words.
+
+
 ### TODO
 
 - [ ] Implement Transformer architecture
