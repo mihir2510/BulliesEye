@@ -38,6 +38,10 @@
 
 <div align='center'>
     <img src='./app/base/static/6.jpg'
-    width=800 height=500>
+    width=960 height=720>
 </div>
 <br>
+
+#### Disclamer
+
+>The texts & images were used in our app for testing purpose only.We don't encourage anybody to use it for crime or cyberbullying.
