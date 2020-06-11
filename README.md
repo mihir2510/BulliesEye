@@ -7,8 +7,8 @@
 
 <div align='center'>
 
-[![made-with-Flask](http://img.shields.io/badge/Made%20with-Flask-red)](www.javascript.com)
-[![made-with-Python](http://img.shields.io/badge/Made%20with-Python-green)](www.php.net)
+[![made-with-Flask](http://img.shields.io/badge/Made%20with-Flask-red)](https://pypi.org/project/Flask/)
+[![made-with-Python](http://img.shields.io/badge/Made%20with-Python-green)](https://www.python.org/)
 
 </div>
 
@@ -105,7 +105,7 @@ Also, update the SQL engine path in [routes.py](WebApp/app/home/routes.py)
 
 ### Telegram Bot 
 
-- Telegram Bot to kick out misbehaving members.3 warning are given and the person is kicked out from the group
+- Telegram Bot to kick out misbehaving members.3 warnings are given and the person is kicked out from the group
 
 - It is trained on our Custom model for detecting texts and [Content Moderation API](https://app.nanonets.com/content-moderation-api/) for NSFW images.
 
