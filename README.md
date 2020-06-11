@@ -97,9 +97,9 @@ Also, update the SQL engine path in [routes.py](WebApp/app/home/routes.py)
 
 ### Extension Details 
 
-- Webapp Cyberbully Detector Extension which hides (for the victims) and highlights (for the admin) bullying content on any web page. Content includes **texts & images** and Extension can **Highlight & Redact text , Hide Images**. Chrome Extension can be found [here](https://github.com/mihir2510/BulliesEye/Extensions/Web-Cyberbully-Detector)
+- Webapp Cyberbully Detector Extension which hides (for the victims) and highlights (for the admin) bullying content on any web page. Content includes **texts & images** and Extension can **Highlight & Redact text , Hide Images**. Chrome Extension can be found [here](https://github.com/mihir2510/BulliesEye/tree/master/Extensions/Web-Cyberbully-Detector)
 
-- WhatsApp Cyberbully Detectorkeep Extension keeps track of WhatsApp conversations by disabling send message button with a warning if its a foul comment. Chrome Extension can be found [here](https://github.com/mihir2510/BulliesEye/Extensions/WhatsApp-Cyberbully-Detector)
+- WhatsApp Cyberbully Detectorkeep Extension keeps track of WhatsApp conversations by disabling send message button with a warning if its a foul comment. Chrome Extension can be found [here](https://github.com/mihir2510/BulliesEye/tree/master/Extensions/WhatsApp-Cyberbully-Detector)
 
 <br>
 
