@@ -19,7 +19,7 @@
 
 <div align='center'>
     <img src='./images/1.jpg'
-    width=600 height=400>
+    width=800 height=400>
 </div>
 <br>
 
