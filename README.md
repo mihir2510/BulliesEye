@@ -113,7 +113,7 @@ Also, update the SQL engine path in [routes.py](WebApp/app/home/routes.py)
 
 ### Use Case
 <div align='center'>
-    <img src='https://github.com/mihir2510/BulliesEye/blob/master/WebApp/app/base/static/Use-Case.jpg'
+    <img src='https://github.com/mihir2510/BulliesEye/blob/master/WebApp/app/base/static/diagram.jpg'
     width=400 height=400>
 </div>
 <br>

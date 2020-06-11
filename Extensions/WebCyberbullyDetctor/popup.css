@@ -1,0 +1,19 @@
+.success {
+    border-color: #4CAF50;
+    color: green;
+  }
+  .success:hover {
+    background-color: rgba(252, 123, 4, 0.932) !important;
+    color: white;
+  }
+
+  .btn {
+    border: 2px solid black;
+    border-radius: 13px;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
