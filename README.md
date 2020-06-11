@@ -1,16 +1,42 @@
 <div align='center'>
+  <h1> Bullies-Eye
+</div>
+<div align='center'>
     <img src='https://cdn4.iconfinder.com/data/icons/football-soccer-sports-outline/512/goal_target_arrow_espa_dartboard_bullseye_focus-512.png' width=200 height=200>
 </div>
 
-# Bullies-Eye
----
+<div align='center'>
 
+[![made-with-Flask](http://img.shields.io/badge/Made%20with-Flask-red)](www.javascript.com)
+[![made-with-Python](http://img.shields.io/badge/Made%20with-Python-green)](www.php.net)
+
+</div>
+
+----------------------------------
+<div align='center'>
+
+## Features
+
+</div>
+
+- Deploy bots (crawlers) on social media platforms like Twitter, Facebook, Reddit, etc to identify inappropriate posts/comments/images/videos and report them automatically, after issuing certain number of warnings.
+These incidents are tracked using our “attention based” transformer model for text and “CNN-LSTM based” model for images / audios / videos.
+
+- An admin dashboard for bot reported cyber-bullying incidents with in-depth analytics. It will send the notifications to the victims, regarding the status of their case.
+
+- The bullying activity on these cases would be further monitored using the dashboard along with an option to auto-generate a report which would be mailed to the authorities.
+
+- A Chrome extension which would hide (for the victims) and highlight (for the admin) bullying content on any web page and keep track of WhatsApp conversations by disabling send message button with a warning if its a foul comment.
+
+- Another bot for chat applications like Telegram to kick out misbehaving members. 
+
+-------------------------
 ## How to use it
 
 ```bash
 $ # Get the code
 $ git clone https://github.com/mihir2510/BulliesEye.git
-$ cd BulliesEye/Ourapp
+$ cd BulliesEye/WebApp
 $
 $ # Virtualenv modules installation (Unix based systems)
 $ virtualenv --no-site-packages env
@@ -32,10 +58,14 @@ $ flask run --host=0.0.0.0 --port=5000
 $
 $ # Access the dashboard in browser: http://127.0.0.1:5000/
 ```
-For the auto-report generation to work, update the sender's email and password in [routes.py](Ourapp/app/home/routes.py)
+
+For the auto-report generation to work, update the sender's email and password in [routes.py](WebApp/app/home/routes.py)
 <br/>
 
-Also, update the SQL engine path in [routes.py](Ourapp/app/home/routes.py)
+Also, update the SQL engine path in [routes.py](WebApp/app/home/routes.py)
+<br/>
+
+
 <br/>
 
 ### Model Details
@@ -53,11 +83,49 @@ Also, update the SQL engine path in [routes.py](Ourapp/app/home/routes.py)
   ```
 - After training the model for 5 epochs accuracy of ~97% accuracy was achieved
 
+<br/>
+
 ### Scraper Details
 
 - The scraper uses [Tweepy](https://www.tweepy.org/) for scraping tweets from Twitter which is passed into the model to check for abusive content
+
 - Top X most offensive tweets were displayed on admin's dashboard with an option to auto-generate report for each offensive/cyberbullying tweet and mailing to relevant authorities.
+
 - Admin can also search for tweets with specific offensive words.
+
+<br>
+
+### Extension Details 
+
+- Webapp Cyberbully Detector Extension which hides (for the victims) and highlights (for the admin) bullying content on any web page. Content includes **texts & images** and Extension can **Hide & Redact text , Hide Images**. Chrome Extension can be found [here](https://github.com/mihir2510/BulliesEye/Extensions/WebCyberbullyDetctor)
+
+- WhatsApp Cyberbully Detectorkeep Extension keeps track of WhatsApp conversations by disabling send message button with a warning if its a foul comment. Chrome Extension can be found [here](https://github.com/mihir2510/BulliesEye/Extensions/WhatsApp-Cyberbully-Detector)
+
+<br>
+
+### Telegram Bot 
+
+- Telegram Bot to kick out misbehaving members.
+
+- It is trained on our Custom model for detecting texts and [Content Moderation API](https://app.nanonets.com/content-moderation-api/) for NSFW images.
+
+
+<br>
+
+### Use Case
+<div align='center'>
+    <img src='./WebApp/app/baTelegram to kick out misbehaving members
+<br>
+
+- Data, “crawled” from social media websites viz “the internet” is stored in DB. 
+Model classifies these threads/comments as toxic or not.
+
+- These results along with additional features like analytics, topic modelling, report facilities, etc are displayed in the Web UI. 
+
+- “Chrome extension” accesses current web page’s content.This content is sent to the background script, where the model does the classification.
+
+- The “filtered content” is displayed back to the page, in a way preventing the display of explicit content.
+
 
 
 ### TODO
@@ -77,3 +145,8 @@ Also, update the SQL engine path in [routes.py](Ourapp/app/home/routes.py)
 ---
 #### Dashboard Credits
 [Flask Dashboard AdminLTE](https://appseed.us/admin-dashboards/flask-dashboard-adminlte) - provided by **AppSeed**
+
+
+#### Disclamer
+
+>The texts & images were used in our app for testing purpose only.We don't encourage anybody to use it for crime or cyberbullying.
