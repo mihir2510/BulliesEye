@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+    "name": "Whats",
+    "version": "1.0",
+    "description": "This extensions helps prevent cyberbullying on whatsapp",
+    "content_scripts": [
+      {
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": ["content.js"],
+        "css": ["content.css"]
+      }
+    ]
+  }

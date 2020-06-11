@@ -21,8 +21,26 @@
 ### Examples
 
 <div align='center'>
-    <img src='https://github.com/mihir2510/BulliesEye/Extensions/Web-Cyberbully-Detector/images/diagram.jpg'
+    <img src='./images/1.png'
+    width=600 height=400>
+</div>
+<br>
+<div align='center'>
+    <img src='./images/2.png'
+    width=600 height=400>
+</div>
+<br>
+<div align='center'>
+    <img src='./images/3.png'
+    width=600 height=400>
+</div>
+<br>
+<div align='center'>
+    <img src='./images/4.png'
     width=600 height=400>
 </div>
 <br>
 
+#### Disclamer
+
+>The texts & images were used in our app for testing purpose only.We don't encourage anybody to use it for crime or cyberbullying.
