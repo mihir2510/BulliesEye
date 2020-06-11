@@ -109,12 +109,12 @@ Also, update the SQL engine path in [routes.py](WebApp/app/home/routes.py)
 
 - It is trained on our Custom model for detecting texts and [Content Moderation API](https://app.nanonets.com/content-moderation-api/) for NSFW images.
 
-
 <br>
 
 ### Use Case
 <div align='center'>
-    <img src='./WebApp/app/baTelegram to kick out misbehaving members
+    <img src='./WebApp/app/base/static/Use-case.jpg'>
+</div>
 <br>
 
 - Data, “crawled” from social media websites viz “the internet” is stored in DB. 
@@ -126,13 +126,15 @@ Model classifies these threads/comments as toxic or not.
 
 - The “filtered content” is displayed back to the page, in a way preventing the display of explicit content.
 
-
+<br>
 
 ### TODO
 
 - [ ] Implement Transformer architecture
 - [ ] Currently its deployed as a Twitter and Telegram Bot, target other platforms like Reddit and Facebook
 - [ ] Turn the Dashboard into a PWA 
+
+<br>
 
 ### Contributors
 - [@KaustubhDamania](https://github.com/KaustubhDamania/)
@@ -142,10 +144,13 @@ Model classifies these threads/comments as toxic or not.
 - [@vtg2000](https://github.com/vtg2000)
 - [@fate2703](https://github.com/fate2703/)
 
+<br>
+
 ---
 #### Dashboard Credits
 [Flask Dashboard AdminLTE](https://appseed.us/admin-dashboards/flask-dashboard-adminlte) - provided by **AppSeed**
 
+<br>
 
 #### Disclamer
 
