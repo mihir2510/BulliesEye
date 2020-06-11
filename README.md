@@ -105,7 +105,7 @@ Also, update the SQL engine path in [routes.py](WebApp/app/home/routes.py)
 
 ### Telegram Bot 
 
-- Telegram Bot to kick out misbehaving members.
+- Telegram Bot to kick out misbehaving members.3 warning are given and the person is kicked out from the group
 
 - It is trained on our Custom model for detecting texts and [Content Moderation API](https://app.nanonets.com/content-moderation-api/) for NSFW images.
 
@@ -113,7 +113,8 @@ Also, update the SQL engine path in [routes.py](WebApp/app/home/routes.py)
 
 ### Use Case
 <div align='center'>
-    <img src='./WebApp/app/base/static/Use-case.jpg'>
+    <img src='https://github.com/mihir2510/BulliesEye/blob/master/WebApp/app/base/static/Use-Case.jpg'
+    width=400 height=400>
 </div>
 <br>
 
