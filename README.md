@@ -105,7 +105,7 @@ Also, update the SQL engine path in [routes.py](WebApp/app/home/routes.py)
 
 ### Telegram Bot 
 
-- Telegram Bot to kick out misbehaving members.3 warnings are given and the person is kicked out from the group
+- Telegram Bot to kick out misbehaving members. 3 warnings are given and the person is kicked out from the group
 
 - It is trained on our Custom model for detecting texts and [Content Moderation API](https://app.nanonets.com/content-moderation-api/) for NSFW images.
 
@@ -132,7 +132,7 @@ Model classifies these threads/comments as toxic or not.
 ### TODO
 
 - [ ] Implement Transformer architecture
-- [ ] Currently its deployed as a Twitter and Telegram Bot, target other platforms like Reddit and Facebook
+- [ ] Currently it's deployed as a Twitter and Telegram Bot, target other platforms like Reddit and Facebook
 - [ ] Turn the Dashboard into a PWA 
 
 <br>
@@ -155,4 +155,4 @@ Model classifies these threads/comments as toxic or not.
 
 #### Disclamer
 
->The texts & images were used in our app for testing purpose only.We don't encourage anybody to use it for crime or cyberbullying.
+>The texts & images were used in our app for testing purpose only. We don't encourage anybody to use it for crime or cyberbullying.
